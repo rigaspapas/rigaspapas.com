@@ -17,14 +17,24 @@
 }
 .button( @color ) {
 	color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
 	outline: none;
 	background-color: @color;
-	border: 1px solid darken(@color , 30%);
-	.shadow( 0px 1px 1px 0px darken(@color , 30%) ~"," inset 0px 0px 0px 1px lighten(@color , 15%) );
-	.radius( 2 );
+	border: 1px solid lighten( @color , 6% );
+	text-shadow: 0px 1px 1px darken( @color , 45% );
+	.shadow( inset 0px -18px 1px 0px darken(@color , 2%) ~"," inset 0px 1px 2px 0px lighten(@color , 18%) );
+	.radius( 3 );
 	
 	&:hover { background-color: darken(@color , 4%); }
+	&:active { background-color: lighten(@color , 4%); }
 }
+
+@header: #252830;
+@orange: #FF7A3C;
+@blue: #6EB9FF;
+@green: #9CE266;
 
 ::selection {
 	background-color: #000;
@@ -39,38 +49,86 @@ body {
 	padding: 0;
 	min-width: 600px;
 	
-	background-color: #E6E8EC;
-	color: #505050;
+	background-color: #111;
+	color: #888;
 	
-	font-family: 'Roboto', Arial, sans-serif;
+	font-family: 'Open Sans', Arial, sans-serif;
 }
-div#header {
+#header {
 	display: block;
 	margin: 0;
 	padding: 10px 2%;
-	background-color: #EFF1F7;
-	border-bottom: 1px solid #999;
+	background: @header url('../images/header.png') top left repeat;
 	overflow: auto;
-	text-shadow: -1px 1px 5px #fff;
+	text-shadow: 0 0 3px #000;
 }
+
+/* LESS gradient magic */
+.headerGradient {
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 1px;
+    position: relative;
+    
+    @p: 8%;
+    
+    border-top: 1px solid darken( @orange , 4*@p );
+    background-color: darken( @orange , 3*@p );
+    border-bottom: 1px solid darken( @orange , 2*@p );
+    
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0px;
+        height: 0px;
+        width: 100%;
+        border-top: 1px solid darken( @orange , @p );
+        border-bottom: 1px solid darken( @orange , 0% );
+    }
+    
+    &.blue {
+        border-top-color: darken( @blue , 4*@p );
+        background-color: darken( @blue , 3*@p );
+        border-bottom-color: darken( @blue , 2*@p );
+        
+        &:after {
+            border-top-color: darken( @blue , @p );
+            border-bottom-color: darken( @blue , 0% );
+        }
+    }
+    &.green {
+        border-top-color: darken( @green , 4*@p );
+        background-color: darken( @green , 3*@p );
+        border-bottom-color: darken( @green , 2*@p );
+        
+        &:after {
+            border-top-color: darken( @green , @p );
+            border-bottom-color: darken( @green , 0% );
+        }
+    }
+}
+
+
 h1 {
 	margin: 0 2% 0 0;
-	color: #5F5F5F;
+	color: #fff;
 	font-size: 50px;
 	float: left;
-	border-right: 1px solid #E6E6E6;
+	border-right: 1px solid lighten( @header , 5% );
 	padding-right: 1%;
 	min-height: 76px;
 	
-	&:hover { color: #74839E; }
+	&:hover { text-shadow: 0px 0px 20px #ccc; }
 	
 	a { color: inherit; }
 }
 h1, h2, h3 {
-	font-family: 'Roboto Condensed', Arial;
+	font-family: 'Open Sans Condensed', Arial;
 }
 
-div#navigator {
+#navigator {
 	float: left;
 	min-width: 300px;
 	
@@ -90,21 +148,19 @@ div#navigator {
 			position: relative;
 			
 			text-align: center;
-			color: #888;
+			color: #ddd;
 			font-weight: 700;
-			font-family: 'Roboto Condensed', Arial, sans-serif;
-			
-			&.selected a { color: #4A6080; }
+			font-family: 'Open Sans Condensed', Arial, sans-serif;
 			
 			a {
 				display: block;
 				height: 76px;
 				color: inherit;
 				
-				&:hover { color: #555; }
+				&:hover { color: #fff; }
 				
 				span {
-					padding: 56px 0 0 0;
+					padding: 60px 0 0 0;
 					display: block;
 				}
 			}
@@ -113,27 +169,48 @@ div#navigator {
 				position: absolute;
 				top: 0;
 				left: 0;
-				width: 56px;
+				width: 50px;
+                height: 50px;
+                line-height: 50px;
+                background-color: #2f2f2f;
+                border: 2px solid #444;
+                .radius( 27 );
 				text-align: center;
+				font-size: 28px;
 				font-family: 'fontello';
 				font-style: normal;
 				font-weight: normal;
-				font-size: 50px;
+                
+                .shadow( inset 2px 2px 5px #000 );
 			}
+            a:after {
+                content: '';
+                position: absolute;
+				top: -4px;
+				left: -4px;
+				width: 60px;
+                height: 60px;
+                border: 1px dashed #666;
+                .radius( 30 );
+            }
+            
 			&#nav-bio a:before { content: '\77ff'; }
 			&#nav-work a:before { content: '\2222'; }
 			&#nav-contact a:before { content: '\1234'; }
+            
+            &.selected#nav-bio a{ color: @orange; }
+            &.selected#nav-work a { color: @blue; }
+            &.selected#nav-contact a { color: @green; }
 		}
 	}
 }
 div.column {
-	margin-top: 20px;
 	float: left;
 	min-width: 500px;
 	max-width: 32.33%;
-	margin-left: 0.5%;
-	padding-right: 0.5%;
-	border-right: 1px solid #ddd;
+	margin: 20px 0 0 -2px;
+	padding: 0px 0.5%;
+	border-left: 2px dashed @header;
 	.opacity( 50 );
 	
 	&.selected { .opacity( 100 ); }
@@ -142,67 +219,91 @@ h2 {
 	margin: 0;
 	padding: 0;
 	color: #999;
-	font-weight: 700;
-	font-size: 40px;
+	font-weight: 300;
+	font-size: 52px;
 }
-div#content {
+#content {
 	width: 300%;
 	position: relative;
 	left: 0;
 }
 
-div#bio-element {
+#bio-element {
 	width: 530px;
-	margin-left: 0.5%;
 	text-align: justify;
 	
 	a {
-		color: #4a6080;
-		font-weight: 500;
+		color: @orange;
 	}
 	strong {
-		color: #000;
-		font-weight: 500;
+		color: #eee;
+		font-weight: 400;
 	}
 		
-	p,div#short-bio {
-		font-size: 17px;
-		line-height: 22px;
-		font-weight: 400;		
+	p,
+    div#short-bio {
+		font-size: 16px;
+		line-height: 28px;
+		font-weight: 400;
+        margin: 0 0 5px 0;
+        padding: 0 0 5px 0;
+        border-bottom: 1px dashed #222;
 	}
-
-	img#bio-picture {
-		float: left;
-		margin: 0 30px 20px 0;
-		display: none;
-	}
+    a.bt {
+        display: inline-block;
+    }
 }
+#bio-picture {
+    .radius( 32 );
+}
+.bioImg {
+    float: left;
+    margin: 20px;
+    display: inline-block;
+    position: relative;
+    
+    &:before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        width: 74px;
+        height: 74px;
+        border: 1px dashed #666;
+        .radius( 36 );
+    }
+}
+
 button#hire,
 button#cv {
 	outline: none;
 	cursor: pointer;
 	padding: 5px 15px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	font-size: 18px;
 }
 button#hire {
-	.button( #6F6B99 );
+	.button( #FF533C);
 }
 button#cv {
-	.button( #3DA3BE );
+	.button( @orange );
 }
 
+h3 {
+    margin-bottom: 0;
+    color: #999;
+    font-weight: 300;
+    font-size: 36px;
+}
 
-div#work-element {
+#work-element {
 	width: 32.33%;
 	h3 {
 		cursor: pointer;
-		margin-bottom: 0;
-		color: #9FA3B1;
-		
-		&.opened { color: inherit!important; }
-		&:hover { color: #74839E; }
+        
+		&.opened { color: @blue; }
+		&:hover { color: #fff; }
 	}
 	
 	#web-work img { height: 60px; }
@@ -223,35 +324,34 @@ div#work-element {
 		}
 	}
 }
-div#contact-element {
+#contact-element {
 	dd {
 		padding: 0;
 		margin: 0;
 		font-size: 25px;
 		font-family: monospace;
-		color: #74839E;
+		color: @green;
 		
 		a { color: inherit; }
 	}
-	
-	div#links {
-		h3 { margin-bottom: 0; }
-		a {
-			color: #bbb;
-			font-size: 32px;
-			font-weight: 700;
-			font-family: 'Roboto Condensed', Arial, sans-serif;
-			display: inline-block;
-			padding-left: 32px;
-			margin-right: 15px;
-			min-height: 32px;
-			
-			&:hover { color: #999; }
-			
-			&#tumblr { background: transparent url('../images/icons/tumblr.png') left no-repeat; }
-			&#github { background: transparent url('../images/icons/github.png') left no-repeat; }
-			&#fpx { background: transparent url('../images/icons/500px.png') left no-repeat; }
-			&#deviantart { background: transparent url('../images/icons/deviantart.png') left no-repeat; }
-		}
-	}
+}
+div#links {
+    a {
+        color: #bbb;
+        font-size: 25px;
+        font-weight: 600;
+        display: block;
+        clear: left;
+        line-height: 48px;
+        padding-left: 36px;
+        margin-right: 15px;
+        min-height: 32px;
+        
+        &:hover { color: @green; }
+        
+        &#tumblr { background: transparent url('../images/icons/tumblr.png') left no-repeat; }
+        &#github { background: transparent url('../images/icons/github.png') left no-repeat; }
+        &#fpx { background: transparent url('../images/icons/500px.png') left no-repeat; }
+        &#deviantart { background: transparent url('../images/icons/deviantart.png') left no-repeat; }
+    }
 }
