@@ -77,6 +77,13 @@ body {
     background-color: darken( @orange , 3*@p );
     border-bottom: 1px solid darken( @orange , 2*@p );
     
+    
+    -webkit-transition: all 0.8s ease-out; 
+       -moz-transition: all 0.8s ease-out; 
+         -o-transition: all 0.8s ease-out; 
+            transition: all 0.8s ease-out; 
+
+    
     &:after {
         content: "";
         position: absolute;
@@ -86,6 +93,11 @@ body {
         width: 100%;
         border-top: 1px solid darken( @orange , @p );
         border-bottom: 1px solid darken( @orange , 0% );
+        
+        -webkit-transition: all 0.8s ease-out;
+           -moz-transition: all 0.8s ease-out;
+             -o-transition: all 0.8s ease-out;
+                transition: all 0.8s ease-out;
     }
     
     &.blue {
@@ -269,7 +281,7 @@ h2 {
         left: -6px;
         width: 74px;
         height: 74px;
-        border: 1px dashed #666;
+        border: 2px dashed #666;
         .radius( 36 );
     }
 }
