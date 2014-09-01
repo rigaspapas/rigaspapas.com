@@ -79,15 +79,24 @@ $( window ).on( 'resize scroll', function () {
     if ( dirtyScrolling )
         return;
     
-    var min = Math.abs( $( '#bio-article' ).offset().top - 180 - $( window ).scrollTop() );
+    var min = 1000;
     var focused = 'bio-article';
+	var line = $( window ).scrollTop() + $( window ).height() / 2;
     
+	console.log( '#' );
+	console.log( line );
+	
     $( '.article' ).each( function () {
     
-        var dist = Math.abs( $( this ).offset().top - 180 - $( window ).scrollTop() );
+		var start = $( this ).offset().top;
+		var end   = start + $( this ).height();
+		
+		console.log( $( this ).attr( 'id' ).substring( 0, $( this ).attr( 'id' ).length - 8 ) );
+		console.log( start );
+		console.log( end );
     
-        if ( dist < min ) {
-            min = dist;
+        if ( line - start < min && line - start > 0 ) {
+            min = line-start;
             focused = $( this ).attr( 'id' );
         }
     } );

@@ -1,6 +1,7 @@
 /*********************
     LESS FUNCTIONS
 *********************/
+@font-family:Roboto;
 
 .opacity (@p) {
 	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{p})";
@@ -23,8 +24,8 @@
     display: inline-block;
     margin: 3px;
 	color: #fff;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: 700;
+    font-family: '@{font-family} Condensed', sans-serif;
+    font-weight: 400;
     font-size: 1.1em;
 	outline: none;
     cursor: pointer;
@@ -37,6 +38,12 @@
 	
 	&:hover { background-color: darken(@color , 4%); }
 	&:active { background-color: lighten(@color , 4%); }
+}
+.transition( @time ) {
+	-webkit-transition: ~'all @{time}s ease-out'; 
+	   -moz-transition: ~'all @{time}s ease-out'; 
+		 -o-transition: ~'all @{time}s ease-out'; 
+			transition: ~'all @{time}s ease-out'; 
 }
 
 /*********************
@@ -69,7 +76,7 @@ body {
     background-attachment: fixed;
 	
     color: #555;
-	font-family: 'Open Sans', Arial, sans-serif;
+	font-family: '@{font-family}', Arial, sans-serif;
     text-align: center;
     font-size: 16px;
 }
@@ -113,20 +120,20 @@ body {
 #logo-link {
     color: @darkOrange;
     display: block;
-    width: 100%;
-    height: auto;
-    max-height: 77px;
-    max-width: 295px;
+    height: 77px;
+    width: 295px;
     margin: 0 auto;
     text-indent: -9999px;
     overflow: hidden;
     
-    background: transparent url('../images/logo.png') top left no-repeat;
+    background: transparent url('../images/logo.png') center no-repeat;
     background-size: contain;
+	
+	.transition( 0.2 );
 }
     
 h1, h2, h3 {
-	font-family: 'Open Sans Condensed', Arial;
+	font-family: '@{font-family} Condensed', Arial;
 }
 
 h1 {
@@ -140,6 +147,7 @@ h2 {
 	color: #444;
 	font-weight: 300;
 	font-size: 3.3em;
+	word-break: break-word;
 }
 h3 {
     margin-bottom: 0;
@@ -170,7 +178,9 @@ h3 {
         
         color: #666;
         font-weight: 700;
-        font-family: 'Open Sans Condensed', Arial, sans-serif;
+        font-family: '@{font-family} Condensed', Arial, sans-serif;
+		
+		.transition( 0.2 );
         
         a {
             display: block;
@@ -208,6 +218,8 @@ h3 {
     margin-top: 180px;
     width: 100%;
     overflow: hidden;
+	
+	.transition( 0.2 );
 }
 
 div.article {
@@ -229,10 +241,10 @@ div.article {
 	}
 		
 	p,
-    div#short-bio {
+    #short-bio {
 		font-size: 1.2em;
 		line-height: 1.7em;
-		font-weight: 400;
+		font-weight: 300;
         margin: 0 0 5px 0;
         padding: 0 0 5px 0;
         border-bottom: 1px dashed #88A3C0;
@@ -341,27 +353,67 @@ body#mobile {
 }
 
 @media screen and (max-width:640px){
-    dd {
+    body { font-size: 15px; }
+	
+	#content { margin-top: 158px; }
+	
+	#logo-link {
+        width: 240px;
+        height: 63px;
+    }
+	
+	@iconSize: 26px;
+
+    #navigator {
+        li {
+            font-size: 15px;
+            width: 17%;
+            
+			a { padding-top: 28px; }
+            a:before {
+                height: @iconSize;
+                line-height: @iconSize;
+                font-size: @iconSize;
+            }
+        }
+    }
+	
+	dd {
         font-size: 1.5em;
     }
 }
 
 @media screen and (max-width:400px){
-    #logo-link {
+    body { font-size: 13px; }
+    
+	#content { margin-top: 133px; }
+	
+	h1 {
+		padding: 5px 0;
+	}
+	#logo-link {
         width: 169px;
         height: 44px;
     }
     
     
-    @iconSize: 20px;
+    @iconSize: 18px;
 
     #navigator {
+		margin-bottom: 5px;
+		
         li {
-            font-size: 14px;
+            font-size: 13px;
             width: 17%;
             
+			span {
+				display: none;
+			}
+			
+			a { padding-top: 22px; }
             a:before {
                 height: @iconSize;
+                line-height: @iconSize;
                 font-size: @iconSize;
             }
         }
