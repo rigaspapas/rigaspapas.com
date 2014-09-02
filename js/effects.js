@@ -56,7 +56,7 @@ $( document ).ready( function () {
 	if ( ( page != 'work' ) && ( page != 'contact' ) ) page = "bio";
 	
     navigate( page , 300 );
-		
+	
 	var hash = location.hash;
 	
     /* We check periodically if the hash has the changed in order to navigate dynamically */
@@ -82,27 +82,18 @@ $( window ).on( 'resize scroll', function () {
     var min = 1000;
     var focused = 'bio-article';
 	var line = $( window ).scrollTop() + $( window ).height() / 2;
-    
-	console.log( '#' );
-	console.log( line );
 	
     $( '.article' ).each( function () {
     
 		var start = $( this ).offset().top;
 		var end   = start + $( this ).height();
-		
-		console.log( $( this ).attr( 'id' ).substring( 0, $( this ).attr( 'id' ).length - 8 ) );
-		console.log( start );
-		console.log( end );
     
         if ( line - start < min && line - start > 0 ) {
             min = line-start;
             focused = $( this ).attr( 'id' );
         }
     } );
-    
-    console.log( focused.substring( 0, focused.length - 8 ) );
-    
+	
     navigate( focused.substring( 0, focused.length - 8 ), false );
 
 } );
