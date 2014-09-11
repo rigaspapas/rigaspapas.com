@@ -45,6 +45,9 @@
 		 -o-transition: ~'all @{time}s ease-out'; 
 			transition: ~'all @{time}s ease-out'; 
 }
+.shadow-light {
+	text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+}
 
 /*********************
        COLORS
@@ -97,31 +100,40 @@ body {
 }
 
 #header {
-    background-color: #fff; /* Fallback */
+    background-color: rgb(220, 226, 236); /* Fallback */
 	background: rgba(220, 226, 236, 0.85) url('../images/header.png') top left repeat;
     border-bottom: 1px solid #6190BB;
-    
+    padding-bottom: 7px;
+	
     position: fixed;
     top: 0;
     left: 0;
+	right: 0;
     width: 100%;
     z-index: 9999;
 }
 
-.headerBorder {
+#header:after {
+	content: ' ';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
     width: 100%;
     height: 5px;
     background: @orange;
-    border-color: darken( @darkOrange, 10% );
     border-style: solid;
+    border-color: darken( @darkOrange, 10% );
     border-width: 1px 0px;
 }
 
 #logo-link {
     color: @darkOrange;
     display: block;
-    height: 77px;
+	max-width: 100%;
     width: 295px;
+    height: 77px;
     margin: 0 auto;
     text-indent: -9999px;
     overflow: hidden;
@@ -138,7 +150,7 @@ h1, h2, h3 {
 
 h1 {
 	margin: 0;
-	padding: 10px 0;
+	padding: 0.1em 0;
 	font-size: 4em;
 }
 h2 {
@@ -148,6 +160,7 @@ h2 {
 	font-weight: 300;
 	font-size: 3.3em;
 	word-break: break-word;
+	.shadow-light;
 }
 h3 {
     margin-bottom: 0;
@@ -156,9 +169,6 @@ h3 {
     color: @blue;
 }
 
-
-
-@iconSize: 32px;
 
 #navigator {
     display: block;
@@ -177,14 +187,14 @@ h3 {
         white-space: nowrap;
         
         color: #666;
+		font-size: 1em;
         font-weight: 700;
         font-family: '@{font-family} Condensed', Arial, sans-serif;
 		
-		.transition( 0.2 );
-        
         a {
             display: block;
-            padding: @iconSize 0 0 0;
+            padding: 2em 0 0 0;
+			.transition( 0.2 );
             
             &:hover { color: #555; }
         }
@@ -194,18 +204,14 @@ h3 {
             top: 0;
             left: 0;
             width: 100%;
-            height: @iconSize;
-            line-height: @iconSize;
+            height: 1em;
+            line-height: 1em;
             text-align: center;
-            font-size: @iconSize;
+            font-size: 2em;
             font-family: 'fontello';
             font-style: normal;
             font-weight: normal;
         }
-        
-        &#nav-bio a:before { content: '\77ff'; }
-        &#nav-work a:before { content: '\2222'; }
-        &#nav-contact a:before { content: '\1234'; }
         
         &.selected a {
             color: darken( @darkOrange, 5% );
@@ -213,6 +219,10 @@ h3 {
         }
     }
 }
+
+#nav-bio a:before { content: '\77ff'; }
+#nav-work a:before { content: '\2222'; }
+#nav-contact a:before { content: '\1234'; }
 
 #content {
     margin-top: 180px;
@@ -222,9 +232,9 @@ h3 {
 	.transition( 0.2 );
 }
 
-div.article {
-    margin: 0 0 80px 0;
-	padding: 0px 10%;
+.article {
+    margin: 0 0 3em 0;
+	padding: 2em 10%;
 	.opacity( 50 );
 	
 	&.selected { .opacity( 100 ); }
@@ -242,23 +252,25 @@ div.article {
 		
 	p,
     #short-bio {
-		font-size: 1.2em;
+		font-size: 1.4em;
 		line-height: 1.7em;
 		font-weight: 300;
-        margin: 0 0 5px 0;
-        padding: 0 0 5px 0;
-        border-bottom: 1px dashed #88A3C0;
+        margin: 0 0 0.3em 0;
+        padding: 0 0 0.3em 0;
+        border-bottom: 1px dashed rgba(0,0,0,0.18);
 	}
     a.bt {
         display: inline-block;
     }
 }
 #bio-picture {
+	width: 6em;
+	height: 6em;
     .radius( 50% );
     border: 3px solid #88A3C0;
 }
 .bioImg {
-    margin: 5px 0;
+    margin: 0.3em 0;
     display: block;
 }
 #hire {
@@ -272,7 +284,7 @@ div.article {
 .work-cont {
     a {
         display: inline-block;
-        margin: 10px;
+        margin: 0.6em;
     }
 	
     img {
@@ -308,49 +320,13 @@ dd {
         
         &:hover { color: @blue; }
         
-        &#tumblr:before { background: transparent url('../images/icons/tumblr.png') left no-repeat; }
-        &#github:before { background: transparent url('../images/icons/github.png') left no-repeat; }
-        &#fpx:before { background: transparent url('../images/icons/500px.png') left no-repeat; }
-        &#deviantart:before { background: transparent url('../images/icons/deviantart.png') left no-repeat; }
     }
 }
+#tumblr:before { background: transparent url('../images/icons/tumblr.png') left no-repeat; }
+#github:before { background: transparent url('../images/icons/github.png') left no-repeat; }
+#fpx:before { background: transparent url('../images/icons/500px.png') left no-repeat; }
+#deviantart:before { background: transparent url('../images/icons/deviantart.png') left no-repeat; }
 
-
-body#mobile {
-    font-size: 12px;
-    
-    #content {
-        margin-top: 100px;
-    }
-    
-    h1 {
-        margin-top: 0;
-        margin-bottom: -8px;
-    }
-    
-    #logo-link {
-        width: 126px;
-        height: 33px;
-    }
-    
-    @iconSize: 18px;
-
-    #navigator {
-        margin-bottom: 0;
-        
-        li {
-            font-size: 0px;
-            text-indent: -9999px;
-            width: 17%;
-            
-            a:before {
-                text-indent: 0px;
-                height: @iconSize;
-                font-size: @iconSize;
-            }
-        }
-    }
-}
 
 @media screen and (max-width:640px){
     body { font-size: 15px; }
@@ -361,30 +337,13 @@ body#mobile {
         width: 240px;
         height: 63px;
     }
-	
-	@iconSize: 26px;
-
-    #navigator {
-        li {
-            font-size: 15px;
-            width: 17%;
-            
-			a { padding-top: 28px; }
-            a:before {
-                height: @iconSize;
-                line-height: @iconSize;
-                font-size: @iconSize;
-            }
-        }
-    }
-	
 	dd {
         font-size: 1.5em;
     }
 }
 
 @media screen and (max-width:400px){
-    body { font-size: 13px; }
+    body { font-size: 11px; }
     
 	#content { margin-top: 133px; }
 	
@@ -395,29 +354,9 @@ body#mobile {
         width: 169px;
         height: 44px;
     }
-    
-    
-    @iconSize: 18px;
-
-    #navigator {
-		margin-bottom: 5px;
-		
-        li {
-            font-size: 13px;
-            width: 17%;
-            
-			span {
-				display: none;
-			}
-			
-			a { padding-top: 22px; }
-            a:before {
-                height: @iconSize;
-                line-height: @iconSize;
-                font-size: @iconSize;
-            }
-        }
-    }
+	
+	#navigator li { width: 20%; }
+	#navigator span { display: none; }
     
     dd {
         font-size: 1em;
