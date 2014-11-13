@@ -1,5 +1,5 @@
 /*********************
-    LESS FUNCTIONS
+	LESS FUNCTIONS
 *********************/
 @font-family:Roboto;
 
@@ -21,14 +21,14 @@
 	-webkit-border-radius: @r;
 }
 .button( @color ) {
-    display: inline-block;
-    margin: 3px;
+	display: inline-block;
+	margin: 3px;
 	color: #fff;
-    font-family: '@{font-family} Condensed', sans-serif;
-    font-weight: 400;
-    font-size: 1.1em;
+	font-family: '@{font-family} Condensed', sans-serif;
+	font-weight: 400;
+	font-size: 1.1em;
 	outline: none;
-    cursor: pointer;
+	cursor: pointer;
 	padding: 5px 15px;
 	background-color: @color;
 	border: 1px solid darken( @color , 15% );
@@ -50,7 +50,7 @@
 }
 
 /*********************
-       COLORS
+	   COLORS
 *********************/
 @orange: #FF7A3C;
 @darkOrange: #FF533C;
@@ -61,12 +61,12 @@
 	color: #fff;
 }
 img {
-    border: none;
+	border: none;
 }
 a {
-    outline: none;
-    color: inherit;
-    text-decoration: none;
+	outline: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 body {
@@ -75,42 +75,42 @@ body {
 	padding: 0;
 	
 	background: #c0c2c5 url('../images/background.png') top left repeat;
-    background-size: cover;
-    background-attachment: fixed;
+	background-size: cover;
+	background-attachment: fixed;
 	
-    color: #555;
+	color: #555;
 	font-family: '@{font-family}', Arial, sans-serif;
-    text-align: center;
-    font-size: 16px;
+	text-align: center;
+	font-size: 16px;
 }
 /*********************
-    FIXED BG IMAGE
-    FOR OLD IEs
+	FIXED BG IMAGE
+	FOR OLD IEs
 *********************/
 #background {
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-        
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+		
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
 
 #header {
-    background-color: rgb(220, 226, 236); /* Fallback */
+	background-color: rgb(220, 226, 236); /* Fallback */
 	background: rgba(220, 226, 236, 0.85) url('../images/header.png') top left repeat;
-    border-bottom: 1px solid #6190BB;
-    padding-bottom: 7px;
+	border-bottom: 1px solid #6190BB;
+	padding-bottom: 7px;
 	
-    position: fixed;
-    top: 0;
-    left: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
 	right: 0;
-    width: 100%;
-    z-index: 9999;
+	width: 100%;
+	z-index: 9999;
 }
 
 #header:after {
@@ -120,30 +120,30 @@ body {
 	left: 0;
 	right: 0;
 	
-    width: 100%;
-    height: 5px;
-    background: @orange;
-    border-style: solid;
-    border-color: darken( @darkOrange, 10% );
-    border-width: 1px 0px;
+	width: 100%;
+	height: 5px;
+	background: @orange;
+	border-style: solid;
+	border-color: darken( @darkOrange, 10% );
+	border-width: 1px 0px;
 }
 
 #logo-link {
-    color: @darkOrange;
-    display: block;
+	color: @darkOrange;
+	display: block;
 	max-width: 100%;
-    width: 295px;
-    height: 77px;
-    margin: 0 auto;
-    text-indent: -9999px;
-    overflow: hidden;
-    
-    background: transparent url('../images/logo.png') center no-repeat;
-    background-size: contain;
+	width: 295px;
+	height: 77px;
+	margin: 0 auto;
+	text-indent: -9999px;
+	overflow: hidden;
+	
+	background: transparent url('../images/logo.png') center no-repeat;
+	background-size: contain;
 	
 	.transition( 0.2 );
 }
-    
+	
 h1, h2, h3 {
 	font-family: '@{font-family} Condensed', Arial;
 }
@@ -163,61 +163,61 @@ h2 {
 	.shadow-light;
 }
 h3 {
-    margin-bottom: 0;
-    font-weight: 300;
-    font-size: 2em;
-    color: @blue;
+	margin-bottom: 0;
+	font-weight: 300;
+	font-size: 2em;
+	color: @blue;
 }
 
 
 #navigator {
-    display: block;
-    margin: 0 0 10px 0;
-    padding: 0;
-    list-style-type: none;
-    width: 100%;
-    
-    li {
-        display: inline-block;
-        margin: 0 3%;
-        padding: 0;
-        width: 27.333%;
-        max-width: 100px;
-        position: relative;
-        white-space: nowrap;
-        
-        color: #666;
-		font-size: 1em;
-        font-weight: 700;
-        font-family: '@{font-family} Condensed', Arial, sans-serif;
+	display: block;
+	margin: 0 0 10px 0;
+	padding: 0;
+	list-style-type: none;
+	width: 100%;
+	
+	li {
+		display: inline-block;
+		margin: 0 3%;
+		padding: 0;
+		width: 27.333%;
+		max-width: 100px;
+		position: relative;
+		white-space: nowrap;
 		
-        a {
-            display: block;
-            padding: 2em 0 0 0;
+		color: #666;
+		font-size: 1em;
+		font-weight: 700;
+		font-family: '@{font-family} Condensed', Arial, sans-serif;
+		
+		a {
+			display: block;
+			padding: 2em 0 0 0;
 			.transition( 0.2 );
-            
-            &:hover { color: #555; }
-        }
-        
-        a:before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1em;
-            line-height: 1em;
-            text-align: center;
-            font-size: 2em;
-            font-family: 'fontello';
-            font-style: normal;
-            font-weight: normal;
-        }
-        
-        &.selected a {
-            color: darken( @darkOrange, 5% );
-            text-shadow: 0px 0px 3px #fff;
-        }
-    }
+			
+			&:hover { color: #555; }
+		}
+		
+		a:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 1em;
+			line-height: 1em;
+			text-align: center;
+			font-size: 2em;
+			font-family: 'fontello';
+			font-style: normal;
+			font-weight: normal;
+		}
+		
+		&.selected a {
+			color: darken( @darkOrange, 5% );
+			text-shadow: 0px 0px 3px #fff;
+		}
+	}
 }
 
 #nav-bio a:before { content: '\77ff'; }
@@ -225,22 +225,22 @@ h3 {
 #nav-contact a:before { content: '\1234'; }
 
 #content {
-    margin-top: 180px;
-    width: 100%;
-    overflow: hidden;
+	margin-top: 180px;
+	width: 100%;
+	overflow: hidden;
 	
 	.transition( 0.2 );
 }
 
 .article {
-    margin: 0 0 3em 0;
+	margin: 0 0 3em 0;
 	padding: 2em 10%;
 	.opacity( 50 );
 	
 	&.selected { .opacity( 100 ); }
 }	
 .bio {
-    a {
+	a {
 		color: darken( @darkOrange, 12% );
 	}
 }
@@ -251,27 +251,27 @@ h3 {
 	}
 		
 	p,
-    #short-bio {
+	#short-bio {
 		font-size: 1.4em;
 		line-height: 1.7em;
 		font-weight: 300;
-        margin: 0 0 0.3em 0;
-        padding: 0 0 0.3em 0;
-        border-bottom: 1px dashed rgba(0,0,0,0.18);
+		margin: 0 0 0.3em 0;
+		padding: 0 0 0.3em 0;
+		border-bottom: 1px dashed rgba(0,0,0,0.18);
 	}
-    a.bt {
-        display: inline-block;
-    }
+	a.bt {
+		display: inline-block;
+	}
 }
 #bio-picture {
 	width: 6em;
 	height: 6em;
-    .radius( 50% );
-    border: 3px solid #88A3C0;
+	.radius( 50% );
+	border: 3px solid #88A3C0;
 }
 .bioImg {
-    margin: 0.3em 0;
-    display: block;
+	margin: 0.3em 0;
+	display: block;
 }
 #hire {
 	.button( @darkOrange );
@@ -282,45 +282,45 @@ h3 {
 
 
 .work-cont {
-    a {
-        display: inline-block;
-        margin: 0.6em;
-    }
+	a {
+		display: inline-block;
+		margin: 0.6em;
+	}
 	
-    img {
-        .radius( 50% );
-        .opacity( 92 );
-        
-        &:hover { .opacity( 100 ) };
-    }
+	img {
+		.radius( 50% );
+		.opacity( 92 );
+		
+		&:hover { .opacity( 100 ) };
+	}
 }
 dd {
-    padding: 0;
-    margin: 0;
-    font-size: 2em;
-    font-family: monospace;
-    color: @blue;
+	padding: 0;
+	margin: 0;
+	font-size: 2em;
+	font-family: monospace;
+	color: @blue;
 }
 #links {
-    a {
-        color: #666;
-        font-size: 1em;
-        font-weight: 600;
-        display: block;
-        clear: left;
-        line-height: 3em;
-        
-        &:before {
-            content: '';
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            margin: 8px 8px -8px -8px;
-        }
-        
-        &:hover { color: @blue; }
-        
-    }
+	a {
+		color: #666;
+		font-size: 1em;
+		font-weight: 600;
+		display: block;
+		clear: left;
+		line-height: 3em;
+		
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			margin: 8px 8px -8px -8px;
+		}
+		
+		&:hover { color: @blue; }
+		
+	}
 }
 #tumblr:before { background: transparent url('../images/icons/tumblr.png') left no-repeat; }
 #github:before { background: transparent url('../images/icons/github.png') left no-repeat; }
@@ -329,36 +329,36 @@ dd {
 
 
 @media screen and (max-width:640px){
-    body { font-size: 15px; }
+	body { font-size: 15px; }
 	
 	#content { margin-top: 158px; }
 	
 	#logo-link {
-        width: 240px;
-        height: 63px;
-    }
+		width: 240px;
+		height: 63px;
+	}
 	dd {
-        font-size: 1.5em;
-    }
+		font-size: 1.5em;
+	}
 }
 
 @media screen and (max-width:400px){
-    body { font-size: 11px; }
-    
+	body { font-size: 11px; }
+	
 	#content { margin-top: 133px; }
 	
 	h1 {
 		padding: 5px 0;
 	}
 	#logo-link {
-        width: 169px;
-        height: 44px;
-    }
+		width: 169px;
+		height: 44px;
+	}
 	
 	#navigator li { width: 20%; }
 	#navigator span { display: none; }
-    
-    dd {
-        font-size: 1em;
-    }
+	
+	dd {
+		font-size: 1em;
+	}
 }
