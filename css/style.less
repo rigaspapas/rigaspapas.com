@@ -22,21 +22,20 @@
 }
 .button( @color ) {
 	display: inline-block;
-	margin: 3px;
-	color: #fff;
+	margin: 0.2em;
+	color: @color;
 	font-family: '@{font-family} Condensed', sans-serif;
 	font-weight: 400;
-	font-size: 1.1em;
+	font-size: 1.5em;
 	outline: none;
 	cursor: pointer;
-	padding: 0.5em 1.2em;
-	background-color: @color;
-	border: 1px solid darken( @color , 5% );
-	text-shadow: 0px 1px 2px darken( @color , 20% );
-	.shadow( inset 0px -1em 0 0 darken(@color, 3%)  );
+	padding: 0.4em 1.2em;
+	background-color: rgba(255,255,255,0.2);
+	border: 2px solid @color;
 	.radius( 3px );
+    .transition( 0.1 );
 	
-	&:hover { background-color: darken(@color , 4%); }
+	&:hover { color:#fff; background-color: @color; }
 	&:active { background-color: lighten(@color , 4%); }
 }
 .transition( @time ) {
@@ -249,34 +248,33 @@ h3 {
 		color: #333;
 		font-weight: 400;
 	}
-		
-	p,
-	#short-bio {
-		font-size: 1.4em;
-		line-height: 1.7em;
-		font-weight: 300;
-		margin: 0;
-		padding: 0 0 1em 0;
-	}
+
 	a.bt {
 		display: inline-block;
 	}
 }
-#bio-picture {
+#bio {
+    font-size: 1.4em;
+    line-height: 1.7em;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 0 1em 0;
+}
+#bio-photo {
 	width: 6em;
 	height: 6em;
 	.radius( 50% );
 	.shadow( 0 2px 10px rgba(0,0,0,0.5) );
 }
-.bioImg {
+.bio-photo-wrapper {
 	margin: 0.3em 0;
 	display: block;
 }
-#hire {
+#cv {
 	.button( @darkOrange );
 }
-#cv {
-	.button( @orange );
+#blog {
+	.button( @blue );
 }
 
 
@@ -305,8 +303,7 @@ dd {
 #links {
 	a {
 		color: #666;
-		font-size: 1em;
-		font-weight: 600;
+		font-size: 1.2em;
 		display: block;
 		clear: left;
 		line-height: 3em;
@@ -358,8 +355,4 @@ dd {
 	
 	#navigator li { width: 20%; }
 	#navigator span { display: none; }
-	
-	dd {
-		font-size: 1em;
-	}
 }
