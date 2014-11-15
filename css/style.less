@@ -36,7 +36,7 @@
     .transition( 0.1 );
 	
 	&:hover { color:#fff; background-color: @color; }
-	&:active { background-color: lighten(@color , 4%); }
+	&:active { color:#fff; background-color: lighten( @color, 10% ); }
 }
 .transition( @time ) {
 	-webkit-transition: ~'all @{time}s ease-out'; 
