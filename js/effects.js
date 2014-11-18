@@ -76,6 +76,13 @@ $( document ).ready( function () {
 
 $( window ).on( 'resize scroll', function () {
 
+    var pageScrolled = $( window ).scrollTop() > 70, //in px
+        logo = $( '#logo' ),
+        smallLogo = logo.hasClass( 'small' );
+    
+    if ( ( pageScrolled && !smallLogo ) || ( !pageScrolled && smallLogo ) )
+        logo.toggleClass( 'small' );
+    
 	if ( dirtyScrolling )
 		return;
 	
