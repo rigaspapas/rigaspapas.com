@@ -117,7 +117,9 @@ body:before {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	margin: @window-space;
+	width: 80%;
+	max-width: 800px;
+	margin: @window-space auto;
 	background-color: #fff;
 	.radius( 10px );
 	.shadow( ~"0 2px 2px rgba(0,0,0,.4), 0 1px 5px rgba(0,0,0,.25)" );
@@ -127,8 +129,9 @@ body:before {
 }
 
 header {
-	background-color: rgba(255,255,255,0.75);
+	background-color: #fff;
 	border-bottom: 1px solid rgba(0,0,0,0.25);
+	.shadow( 0 1px 4px rgba(0,0,0,.1) );
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 
@@ -137,7 +140,9 @@ header {
 	left: 0;
 	right: 0;
 	height: 5em;
-	margin: @window-space;
+	width: 80%;
+	max-width: 800px;
+	margin: @window-space auto;
 	z-index: 2;
 }
 
@@ -159,15 +164,14 @@ h2 {
 	padding: 0;
 	color: #666;
 	font-weight: 300;
-	font-size: 3.3em;
+	font-size: 2.8em;
 	word-break: break-word;
-	.shadow-light;
 }
 h3 {
 	margin-bottom: 0;
 	font-weight: 300;
-	font-size: 2em;
-	color: @blue;
+	font-size: 1.5em;
+	color: #aaa;
 }
 
 #avatar {
@@ -231,9 +235,19 @@ h3 {
 	}
 }
 
-#nav-bio a:before { content: '\77ff'; }
-#nav-work a:before { content: '\2222'; }
-#nav-contact a:before { content: '\1234'; }
+#nav-bio a:before { content: '\e804'; }
+#nav-work a:before { content: '\e805'; }
+#nav-contact a:before { content: '\e806'; }
+.icon:before {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+}
+.icon-github:before { content: '\e800'; }
+.icon-500px:before { content: '\e801'; }
+.icon-deviantart:before { content: '\e802'; }
+.icon-tumblr:before { content: '\e803'; }
 
 #content {
 	margin-top: 5em;
@@ -241,8 +255,7 @@ h3 {
 }
 
 article {
-	margin: 0 0 3em 0;
-	padding: 2em 10%;
+	padding: 2em 10% 5em;
 	.opacity( 50 );
 
 	&.selected { .opacity( 100 ); }
@@ -290,6 +303,11 @@ article {
 		&:hover { .opacity( 100 ) };
 	}
 }
+dt {
+	color: #aaa;
+	font-weight: 300;
+	font-size: .85em;
+}
 dd {
 	padding: 0;
 	margin: 0 0 1em 0;
@@ -301,42 +319,49 @@ dd {
 }
 #links {
 	a {
-		color: #666;
-		font-size: 1.2em;
+		color: #aaa;
+		float: left;
+		width: 25%;
+		text-align: center;
+		font-size: 0.9em;
 		display: block;
-		clear: left;
 		line-height: 3em;
+		.transition( .3 );
 
-		&:before {
-			content: '';
-			display: inline-block;
-			width: 32px;
-			height: 32px;
-			margin: 8px 8px -8px -8px;
+		.icon {
+			display: block;
+			font-size: 3.5em;
+			line-height: 2em;
 		}
-
 		&:hover { color: @blue; }
 
 	}
 }
-#tumblr:before { background: transparent url('../images/icons/tumblr.png') left no-repeat; }
-#github:before { background: transparent url('../images/icons/github.png') left no-repeat; }
-#fpx:before { background: transparent url('../images/icons/500px.png') left no-repeat; }
-#deviantart:before { background: transparent url('../images/icons/deviantart.png') left no-repeat; }
 
+@media screen and (max-width:950px){
+	body { font-size: 15px; }
+}
+
+@media screen and (max-width:800px){
+	body { font-size: 14px; }
+}
 
 @media screen and (max-width:640px){
 	body { font-size: 13px; }
+	h1 { display: none; }
+	#navigator {
+		li {
+			width: 4em;
+			a {
+				padding: 5em 0 0 0;
+				line-height: 0;
+			}
 
-	#content { margin-top: 158px; }
-
-	#logo {
-		width: 240px;
-		height: 63px;
-
-		&.small {
-			width: 169px;
-			height: 44px;
+			a:before {
+				height: 2.5em;
+				line-height: 2.5em;
+			}
+			span { display: none; }
 		}
 	}
 	dd {
@@ -346,22 +371,4 @@ dd {
 
 @media screen and (max-width:400px){
 	body { font-size: 11px; }
-
-	#content { margin-top: 133px; }
-
-	h1 {
-		padding: 5px 0;
-	}
-	#logo {
-		width: 169px;
-		height: 44px;
-
-		&.small {
-			width: 115px;
-			height: 30px;
-		}
-	}
-
-	#navigator li { width: 20%; }
-	#navigator span { display: none; }
 }
