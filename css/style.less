@@ -124,8 +124,6 @@ body:before {
 	.radius( 10px );
 	.shadow( ~"0 2px 2px rgba(0,0,0,.4), 0 1px 5px rgba(0,0,0,.25)" );
 	z-index: 1;
-	overflow-y: auto;
-	overflow-x: hidden;
 }
 
 header {
@@ -142,8 +140,22 @@ header {
 	height: 5em;
 	width: 80%;
 	max-width: 800px;
-	margin: @window-space auto;
+	margin: @window-space auto 0;
 	z-index: 2;
+}
+
+#content {
+	position: fixed;
+	top: 10em;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 auto @window-space;
+	width: 80%;
+	max-width: 800px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	.transition( 0.2 );
 }
 
 h1, h2, h3 {
@@ -248,11 +260,6 @@ h3 {
 .icon-500px:before { content: '\e801'; }
 .icon-deviantart:before { content: '\e802'; }
 .icon-tumblr:before { content: '\e803'; }
-
-#content {
-	margin-top: 5em;
-	.transition( 0.2 );
-}
 
 article {
 	padding: 2em 10% 5em;

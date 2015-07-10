@@ -1,21 +1,5 @@
 var dirtyScrolling = false;
 
-function detect_mobile() {
-	var user_agent = navigator.userAgent.toString();
-
-	if(user_agent.match(/Android/i)
-	|| user_agent.match(/webOS/i)
-	|| user_agent.match(/iPhone/i)
-	|| user_agent.match(/iPad/i)
-	|| user_agent.match(/iPod/i)
-	|| user_agent.match(/BlackBerry/i)
-	|| user_agent.match(/Windows Phone/i)
-	)
-		return true;
-	else
-		return false;
-}
-
 /* Function that makes the correct element to fade in and the others to fade out */
 function navigate ( goal , easing ) {
 	var menuItem = '#nav-' + goal,
@@ -30,15 +14,14 @@ function navigate ( goal , easing ) {
 
 	dirtyScrolling = true;
 
-	$( '#window' ).stop().animate( {
-			scrollTop: $( elementToFocus ).offsetParent().top - $( 'header' ).height() + 'px'
+	$( '#content' ).stop().animate( {
+			scrollTop: $( elementToFocus ).prev().outerHeight() + $( elementToFocus ).prev().prev().outerHeight() + 'px'
 		},
 		easing,
 		function () {
 			dirtyScrolling = false;
 		}
 	);
-
 	return true;
 }
 
@@ -49,7 +32,7 @@ function autoFocus() {
 
 	var min = 1000000;
 	var focused = 'bio-article';
-	var line = $( '#window' ).height() / 2;
+	var line = $( '#content' ).height() / 2;
 	// Check all articles to find the focused one
 	$( 'article' ).each( function () {
 		var start = $( this ).offset().top;
@@ -67,40 +50,22 @@ function autoFocus() {
 	} );
 	// Navigate to the currently focused element
 	navigate( focused.substring( 0, focused.length - 8 ), false );
-
 }
 
 $( document ).ready( function () {
-
-	if ( detect_mobile() )
-		$( 'body' ).attr( 'id', 'mobile' );
-
 	$( '#nav-bio , #bio-article' ).click( function () { navigate( 'bio' , 1000 ) });
 	$( '#nav-work , #work-article' ).click( function () { navigate( 'work' , 1000 ) });
 	$( '#nav-contact , #contact-article' ).click( function () { navigate( 'contact' , 1000 ) });
 
-	/* Hide the elements we don't want to be shown */
-	var page = window.location.hash.substring(1);
-	if ( ( page != 'work' ) && ( page != 'contact' ) ) page = "bio";
-
-	navigate( page , 300 );
-
-	var hash = location.hash;
-
-	/* We check periodically if the hash has the changed in order to navigate dynamically */
-	setInterval( function() {
-		if ( location.hash != hash ) {
-			hash = location.hash;
-
-			$( '#navigator li' ).each( function(){
-				var dest = $( this ).attr( 'id' ).substring( 4 );
-
-				if ( '#' + dest == hash )
-					navigate( dest , 500 );
-			} );
-		}
-	}, 100 );
+	// On-load focus on the hashed element
+	if ( window.location.hash.length > 1 ) {
+		$( '#navigator li' ).each( function(){
+			var dest = $( this ).attr( 'id' ).substring( 4 );
+			if ( '#' + dest == window.location.hash )
+				navigate( dest , 50 );
+		} );
+	}
 } );
 
 $( window ).on( 'resize', autoFocus );
-$( '#window' ).on( 'scroll', autoFocus );
+$( '#content' ).on( 'scroll', autoFocus );
