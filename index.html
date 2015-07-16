@@ -1,15 +1,15 @@
-<!DOCTYPE html> 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<!DOCTYPE html>
+<html>
     <head>
-        <title>Rigas Papas</title>	
+        <title>Rigas Papas</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="My name is Rigas Papas. This is my personal website" />
-        <link rel="shortcut icon" href="favicon.ico" />		
+        <link rel="shortcut icon" href="favicon.ico" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="format-detection" content="telephone=no" />
-        
+
         <!-- Google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,500|Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
         <!-- Google analytics -->
@@ -26,100 +26,105 @@
         </script>
     </head>
     <body>
-        <div id="header">
-            <h1>
-                <a id="logo" href="http://www.rigaspapas.com">
-                    Rigas Papas
-                </a>
-            </h1>
-            
-            <ul id="navigator">
-                <li id="nav-bio" class="selected">
-                    <a href="#bio">
-                        <span>Bio</span>
-                    </a>
-                </li>
-                <li id="nav-work">
-                    <a href="#work">
-                        <span>My work</span>
-                    </a>
-                </li>
-                <li id="nav-contact">
-                    <a href="#contact">
-                        <span>Contact</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        
-        <div id="content">
-                
-            <div id="bio-article" class="article bio selected">
-                <h2>Personal info and details</h2>
-                
-                <div id="bio">
-                    <span class="bio-photo-wrapper">
-                        <img id="bio-photo" alt="This is me!" src="images/avatar.jpg" width="256" height="256"/>
-                    </span>
-                    
-                    Hi there, my name is <strong>Rigas</strong>. I am 23 years old, from <a href="http://goo.gl/maps/XUJIy">Athens, Greece</a>.
-                    I study <a href="http://www.ece.ntua.gr/">computer engineering</a>, and I am an amateur web designer. I am passionate about technology and engineering. <a href="http://500px.com/rhgas">Photography</a> is my hobby.
-                </div>
-                    
-                    <a href="/blog" id="blog">
-                        Read my blog
-                    </a>
-                    
-                    <a href="cv.html" id="cv">
-                        Résumé
-                    </a>
-                </div>
-            </div>
-            
-            <div id="work-article" class="article">
-                <h2>Examples of work</h2>
-                <div class="work-section">
-                    <h3>Websites</h3>
-                    <div class="work-cont" id="web-work">
-                        <a href="/ParagraphUI">
-                            <img alt="Paragraph UI" src="images/web/paragraphui.png" />
+        <div id="window">
+            <header>
+                <img id="avatar" alt="This is me!" src="images/avatar.jpg" width="256" height="256"/>
+                <h1>Rigas Papas</h1>
+
+                <ul id="navigator">
+                    <li id="nav-bio" class="selected">
+                        <a href="#bio">
+                            <span>Bio</span>
                         </a>
-                        <a href="http://www.stantza.gr">
-                            <img alt="stantza.gr" src="images/web/stantza.png" />
+                    </li>
+                    <li id="nav-work">
+                        <a href="#work">
+                            <span>My work</span>
+                        </a>
+                    </li>
+                    <li id="nav-contact">
+                        <a href="#contact">
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </header>
+
+            <section id="content">
+                <article id="bio-article" class="selected">
+                    <h2>Personal info and details</h2>
+
+                    <p id="bio">
+                        Hi there, my name is <strong>Rigas</strong>. I am 24 years old, from <a href="http://goo.gl/maps/XUJIy">Athens, Greece</a>.
+                        I study <a href="http://www.ece.ntua.gr/">computer engineering</a>, and I am an amateur web designer. I am passionate about technology and engineering. <a href="http://500px.com/rhgas">Photography</a> is my hobby.
+                    </p>
+                    <div>
+                        <a href="/blog" id="blog">
+                            Read my blog
+                        </a>
+
+                        <a href="cv.html" id="cv">
+                            Résumé
                         </a>
                     </div>
-                </div>
-            </div>
-            
-            <div id="contact-article" class="article">
-                <h2>Contact information</h2>
-                <dl>
-                    <dt>E-mail</dt>
-                        <dd>
-                            <a href="mailto:rigaspapas@hotmail.com">rigaspapas@hotmail.com</a>
-                        </dd>
-                    <dt>Secondary e-mail</dt>
-                        <dd>
-                            <a href="mailto:rigaspapas@gmail.com">rigaspapas@gmail.com</a>
-                        </dd>
-                    <dt>Skype name</dt>
-                        <dd>rigaspapas</dd>
-                </dl>
-                
-                <h3>Other links</h3>
-                <div id="links">
-                    <a id="github" href="https://github.com/rigaspapas/">Github</a>
-                    <a id="fpx" href="http://500px.com/rhgas">500px</a>
-                    <a id="tumblr" href="http://footballdesign.tumblr.com/">Design blog</a>
-                    <a id="deviantart" href="http://rigaspapas.deviantart.com/">DeviantArt</a>
-                </div>
-            </div>
-            
+                </article>
+
+                <article id="work-article">
+                    <h2>Examples of work</h2>
+                    <div class="work-section">
+                        <h3>Websites</h3>
+                        <div class="work-cont" id="web-work">
+                            <a href="/ParagraphUI">
+                                <img alt="Paragraph UI" src="images/web/paragraphui.png" />
+                            </a>
+                            <a href="http://www.stantza.gr">
+                                <img alt="stantza.gr" src="images/web/stantza.png" />
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="contact-article">
+                    <h2>Contact information</h2>
+                    <dl>
+                        <dt>E-mail</dt>
+                            <dd>
+                                <a href="mailto:rigaspapas@hotmail.com">rigaspapas@hotmail.com</a>
+                            </dd>
+                        <dt>Secondary e-mail</dt>
+                            <dd>
+                                <a href="mailto:rigaspapas@gmail.com">rigaspapas@gmail.com</a>
+                            </dd>
+                        <dt>Skype name</dt>
+                            <dd>rigaspapas</dd>
+                    </dl>
+
+                    <h3>Other links</h3>
+                    <div id="links">
+                        <a id="github" href="https://github.com/rigaspapas/">
+                            <i class="icon icon-github"></i>
+                            Github
+                        </a>
+                        <a id="fpx" href="http://500px.com/rhgas">
+                            <i class="icon icon-500px"></i>
+                            500px
+                        </a>
+                        <a id="tumblr" href="http://footballdesign.tumblr.com/">
+                            <i class="icon icon-tumblr"></i>
+                            Design blog
+                        </a>
+                        <a id="deviantart" href="http://rigaspapas.deviantart.com/">
+                            <i class="icon icon-deviantart"></i>
+                            DeviantArt
+                        </a>
+                    </div>
+                </article>
+            </section>
         </div>
         <!--[if lt IE 10]>
-        <img id="background" alt="background-image" src="images/background.png" />
+        <img id="background" alt="background-image" src="images/background.jpg" />
         <![endif]-->
-        
+
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/fonts.js"></script>
         <script type="text/javascript" src="js/effects.js"></script>
