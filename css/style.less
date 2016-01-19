@@ -84,7 +84,6 @@ body {
     color: @text;
     font-family: '@{font-family}', Arial, sans-serif;
     text-align: center;
-    font-size: 16px;
 }
 body:before {
     content: '';
@@ -308,21 +307,13 @@ dd {
     }
 }
 
-@media screen and (max-width:950px){
-    body { font-size: 15px; }
-}
-
-@media screen and (max-width:800px){
-    body { font-size: 14px; }
-}
-
 @media screen and (max-width:640px){
-    body { font-size: 13px; }
+    html { font-size: 85%; }
     dd {
         font-size: 1.3rem;
     }
 }
 
 @media screen and (max-width:400px){
-    body { font-size: 11px; }
+    html { font-size: 75%; }
 }
