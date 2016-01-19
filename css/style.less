@@ -1,4 +1,4 @@
-// out: style.css, sourcemap: false, compress: true
+// out: style.css, sourcremap: false, compress: true
 /*********************
     LESS FUNCTIONS
 *********************/
@@ -23,14 +23,14 @@
 }
 .button( @color ) {
     display: inline-block;
-    margin: 0.2em;
+    margin: 0.2rem;
     color: @color;
     font-family: '@{font-family} Condensed', sans-serif;
     font-weight: 400;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     outline: none;
     cursor: pointer;
-    padding: 0.4em 1.2em;
+    padding: 0.4rem 1.2rem;
     background-color: rgba(255,255,255,0.2);
     border: 2px solid @color;
     .radius( 3px );
@@ -112,7 +112,7 @@ body:before {
     z-index: -1;
 }
 
-@window-space: 5em;
+@window-space: 5rem;
 
 #window {
     position: fixed;
@@ -149,7 +149,7 @@ header {
 
 #content {
     position: fixed;
-    top: 10em;
+    top: 10rem;
     left: 0;
     right: 0;
     bottom: 0;
@@ -170,22 +170,22 @@ h1 {
     padding: 2.5rem 0 0 0;
     height: 2.5rem;
     line-height: 2.5rem;
-    font-size: 1.6em;
+    font-size: 1.6rem;
     font-weight: 400;
 }
 h2 {
-    margin: 0 0 1em;
+    margin: 0 0 1rem;
     padding: 0;
     color: @darkOrange;
-    font-size: 1em;
-    line-height: 2em;
+    font-size: 1rem;
+    line-height: 2rem;
     word-break: break-word;
     text-transform: uppercase;
 }
 h3 {
     margin-bottom: 0;
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     color: @text-light;
 }
 
@@ -228,7 +228,7 @@ h3 {
 .icon-tumblr:before { content: '\e803'; }
 
 article {
-    padding: 2em 10% 5em;
+    padding: 2rem 10% 5rem;
 }
 .bio {
     a {
@@ -246,11 +246,11 @@ article {
     }
 }
 #bio {
-    font-size: 1.4em;
+    font-size: 1.4rem;
     line-height: 1.7em;
     font-weight: 300;
     margin: 0;
-    padding: 0 0 1em 0;
+    padding: 0 0 1rem 0;
 }
 #cv {
     .button( @darkOrange );
@@ -263,7 +263,7 @@ article {
 .work-cont {
     a {
         display: inline-block;
-        margin: 0.6em;
+        margin: 0.6rem;
     }
 
     img {
@@ -276,12 +276,12 @@ article {
 dt {
     color: #aaa;
     font-weight: 300;
-    font-size: .85em;
+    font-size: .85rem;
 }
 dd {
     padding: 0;
-    margin: 0 0 1em 0;
-    font-size: 1.4em;
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
     color: #222;
     .transition( 0.3 );
 
@@ -293,14 +293,14 @@ dd {
         float: left;
         width: 25%;
         text-align: center;
-        font-size: 0.9em;
+        font-size: 0.9rem;
         display: block;
         line-height: 3em;
         .transition( .3 );
 
         .icon {
             display: block;
-            font-size: 3.5em;
+            font-size: 3.5rem;
             line-height: 2em;
         }
         &:hover { color: @blue; }
@@ -319,7 +319,7 @@ dd {
 @media screen and (max-width:640px){
     body { font-size: 13px; }
     dd {
-        font-size: 1.3em;
+        font-size: 1.3rem;
     }
 }
 
