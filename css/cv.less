@@ -1,28 +1,29 @@
+// out: cv.css, sourcremap: false, compress: true
 @blue: #006DD7;
-@important: #8E5218;
+@important: #B3055A;
 
 @text: 'Roboto Slab',serif;
 @sans-serif: sans-serif;
 @header: 'Open Sans Condensed',sans-serif;
 
 .border-box {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-		    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    
+
     &:hover { color: @blue; }
 }
 
 body {
     margin: 0;
     padding: 0;
-    
-    background-color: #f0f0f0;
+
+    background-color: #fff;
     color: #222;
     font-size: 16px;
     line-height: 20px;
@@ -32,15 +33,14 @@ body {
 header {
     text-align: center;
     padding: 1em;
-    
     font-family: @header;
-    
+
     h1 {
         font-size: 2em;
         line-height: 1.4em;
         margin: 0;
     }
-    
+
     h2 {
         color: @blue;
         font-weight: 300;
@@ -51,18 +51,18 @@ header {
 }
 
 #avatar {
-	width: 8em;
-	height: 8em;
-	border-radius: 50%;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.6);
 }
 
 #left {
     width: 50%;
     float: left;
-    
+
     text-align: left;
-    
+
     padding: 0 1em;
     margin: 0 0 0 2%;
     border-left: 3px solid @blue;
@@ -71,19 +71,19 @@ header {
 
 section {
     padding-bottom: 1.5em;
-    
+
     h1 {
         padding: 0;
         margin: 0;
-        
+
         font-size: 2.4em;
         line-height: 1.5em;
         font-weight: 400;
         font-family: @header;
         color: #555;
-        border-bottom: 1px solid #555;
+        border-bottom: 1px solid fade(#555, 40%);
     }
-    
+
     h2 {
         padding: 0;
         margin: 0;
@@ -103,7 +103,7 @@ dt {
     font-size: 12px;
     line-height: 18px;
     font-family: @sans-serif;
-    color: #777;
+    color: #888;
 }
 dd {
     margin: 0 0 0.5em 0;
@@ -122,21 +122,20 @@ dd {
     font-family: @header;
     font-weight: bold;
     position: relative;
-    
+
     &:after {
         content: '';
         display: block;
-                
+
         position: absolute;
-        top: 0;
+        top: 1px;
+        margin-left: -10px;
         left: -1em;
-        
-        margin: 0.3em 0 0 -7px;
         width: 11px;
         height: 11px;
-        background-color: @blue;
+        background-color: #fff;
+        border: 3px solid @blue;
         border-radius: 50%;
-        box-shadow: 0 2px 2px rgba(0,0,0,0.5);
     }
 }
 .role,
@@ -178,7 +177,7 @@ ul {
         font-family: @header;
         font-weight: 400;
         line-height: 0;
-        
+
         > span {
             position: relative;
             top: @width/2;
@@ -188,7 +187,7 @@ ul {
             z-index: 1;
             border-radius: 3px;
         }
-        
+
         &:before {
             content: '';
             z-index: 0;
@@ -207,13 +206,13 @@ ul {
 
 ul.raw {
     font-size: 1.1em;
-    
+
     li {
         display: inline;
 
         &:after {
             content: '//';
-            color: @important;
+            color: fade(@important, 50%);
             margin: 0 0.3em;
         }
     }
@@ -221,7 +220,7 @@ ul.raw {
 
 #languages {
     color: #777;
-    
+
     strong { color: #222 }
 }
 
@@ -246,12 +245,12 @@ h1:before {
 }
 
 @media screen and (max-width:700px){
-	body { font-size: 14px; }
+    body { font-size: 14px; }
 }
 
 @media screen and (max-width:600px){
-	body { font-size: 13px; }
-    
+    body { font-size: 13px; }
+
     #left, #right {
         float: none;
         width: auto;
@@ -259,5 +258,5 @@ h1:before {
 }
 
 @media screen and (max-width:400px){
-	body { font-size: 12px; }
+    body { font-size: 12px; }
 }
