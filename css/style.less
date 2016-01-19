@@ -1,260 +1,263 @@
 // out: style.css, sourcemap: false, compress: true
 /*********************
-	LESS FUNCTIONS
+    LESS FUNCTIONS
 *********************/
 @font-family:Roboto;
 
 .opacity (@p) {
-	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{p})";
-	filter: ~"alpha(opacity=@{p})";
-	-moz-opacity: @p*0.01;
-	-khtml-opacity: @p*0.01;
-	opacity: @p*0.01;
+    -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{p})";
+    filter: ~"alpha(opacity=@{p})";
+    -moz-opacity: @p*0.01;
+    -khtml-opacity: @p*0.01;
+    opacity: @p*0.01;
 }
 .shadow ( @shadow ) {
-	box-shadow: @shadow;
-	-moz-box-shadow: @shadow;
-	-webkit-box-shadow: @shadow;
+    box-shadow: @shadow;
+    -moz-box-shadow: @shadow;
+    -webkit-box-shadow: @shadow;
 }
 .radius ( @r ) {
-	border-radius: @r;
-	-moz-border-radius: @r;
-	-webkit-border-radius: @r;
+    border-radius: @r;
+    -moz-border-radius: @r;
+    -webkit-border-radius: @r;
 }
 .button( @color ) {
-	display: inline-block;
-	margin: 0.2em;
-	color: @color;
-	font-family: '@{font-family} Condensed', sans-serif;
-	font-weight: 400;
-	font-size: 1.5em;
-	outline: none;
-	cursor: pointer;
-	padding: 0.4em 1.2em;
-	background-color: rgba(255,255,255,0.2);
-	border: 2px solid @color;
-	.radius( 3px );
-	.transition( 0.1 );
+    display: inline-block;
+    margin: 0.2em;
+    color: @color;
+    font-family: '@{font-family} Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    outline: none;
+    cursor: pointer;
+    padding: 0.4em 1.2em;
+    background-color: rgba(255,255,255,0.2);
+    border: 2px solid @color;
+    .radius( 3px );
+    .transition( 0.1 );
 
-	&:hover { color:#fff; background-color: @color; }
-	&:active { color:#fff; background-color: lighten( @color, 10% ); }
+    &:hover { color:#fff; background-color: @color; }
+    &:active { color:#fff; background-color: lighten( @color, 10% ); }
 }
 .transition( @time ) {
-	-webkit-transition: ~'all @{time}s ease-out';
-	   -moz-transition: ~'all @{time}s ease-out';
-		 -o-transition: ~'all @{time}s ease-out';
-			transition: ~'all @{time}s ease-out';
+    -webkit-transition: ~'all @{time}s ease-out';
+       -moz-transition: ~'all @{time}s ease-out';
+         -o-transition: ~'all @{time}s ease-out';
+            transition: ~'all @{time}s ease-out';
 }
 .shadow-light {
-	text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+    text-shadow: 0 1px 1px rgba(255,255,255,0.4);
 }
 
 /*********************
-	   COLORS
+       COLORS
 *********************/
 @orange: #FF7A3C;
 @darkOrange: #FF533C;
 @blue: #14528B;
+@text: #333;
+@text-medium: #666;
+@text-light: #999;
 
 ::selection {
-	background-color: #000;
-	color: #fff;
+    background-color: #000;
+    color: #fff;
 }
 img {
-	border: none;
+    border: none;
 }
 a {
-	outline: none;
-	color: inherit;
-	text-decoration: none;
+    outline: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 body {
-	display: block;
-	margin: 0;
-	padding: 0;
+    display: block;
+    margin: 0;
+    padding: 0;
 
-	background: @blue url('../images/background.jpg') center no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
+    background: @blue url('../images/background.jpg') center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 
-	color: #555;
-	font-family: '@{font-family}', Arial, sans-serif;
-	text-align: center;
-	font-size: 16px;
+    color: @text;
+    font-family: '@{font-family}', Arial, sans-serif;
+    text-align: center;
+    font-size: 16px;
 }
 body:before {
-	content: '';
-	z-index: 0;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: fade(@blue,50%);
+    content: '';
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: fade(@blue,50%);
 }
 /*********************
-	FIXED BG IMAGE
-	FOR OLD IEs
+    FIXED BG IMAGE
+    FOR OLD IEs
 *********************/
 #background {
-	width: auto;
-	height: auto;
-	min-width: 100%;
-	min-height: 100%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
 
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 @window-space: 5em;
 
 #window {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 80%;
-	max-width: 800px;
-	margin: @window-space auto;
-	background-color: #fff;
-	.radius( 10px );
-	.shadow( ~"0 2px 2px rgba(0,0,0,.4), 0 1px 5px rgba(0,0,0,.25)" );
-	z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    max-width: 800px;
+    margin: @window-space auto;
+    background-color: #fff;
+    .radius( 10px );
+    .shadow( ~"0 2px 2px rgba(0,0,0,.4), 0 1px 5px rgba(0,0,0,.25)" );
+    z-index: 1;
 }
 
 header {
-	background-color: #fff;
-	border-bottom: 1px solid rgba(0,0,0,0.25);
-	.shadow( 0 1px 4px rgba(0,0,0,.1) );
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    .shadow( 0 1px 4px rgba(0,0,0,.1) );
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 5em;
-	width: 80%;
-	max-width: 800px;
-	margin: @window-space auto 0;
-	z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5em;
+    width: 80%;
+    max-width: 800px;
+    margin: @window-space auto 0;
+    z-index: 2;
 }
 
 #content {
-	position: fixed;
-	top: 10em;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: 0 auto @window-space;
-	width: 80%;
-	max-width: 800px;
-	overflow-y: auto;
-	overflow-x: hidden;
-	.transition( 0.2 );
+    position: fixed;
+    top: 10em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto @window-space;
+    width: 80%;
+    max-width: 800px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .transition( 0.2 );
 }
 
 h1, h2, h3 {
-	font-family: '@{font-family} Condensed', Arial;
+    font-family: '@{font-family} Condensed', Arial;
 }
 
 h1 {
-	margin: 0;
-	padding: 0 .5em 0 0;
-	height: 100%;
-	line-height: 2.5em;
-	float: left;
-	font-size: 2em;
-	font-weight: 400;
+    margin: 0;
+    padding: 0 .5em 0 0;
+    height: 100%;
+    line-height: 2.5em;
+    float: left;
+    font-size: 2em;
+    font-weight: 400;
 }
 h2 {
-	margin: 0;
-	padding: 0;
-	color: #666;
-	font-weight: 300;
-	font-size: 2.8em;
-	word-break: break-word;
+    margin: 0;
+    padding: 0;
+    color: @text-medium;
+    font-weight: 300;
+    font-size: 2.8em;
+    word-break: break-word;
 }
 h3 {
-	margin-bottom: 0;
-	font-weight: 300;
-	font-size: 1.5em;
-	color: #aaa;
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: 1.5em;
+    color: @text-light;
 }
 
 #avatar {
-	float: left;
-	height: 3em;
-	width: 3em;
-	margin: 1em;
-	.radius( 50% );
+    float: left;
+    height: 3em;
+    width: 3em;
+    margin: 1em;
+    .radius( 50% );
 }
 
 #navigator {
-	display: block;
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	height: 100%;
-	float: right;
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 100%;
+    float: right;
 
-	li {
-		display: inline-block;
-		float: left;
-		margin: 0 .5em;
-		padding: 0;
-		width: 5em;
-		height: 100%;
-		position: relative;
-		white-space: nowrap;
+    li {
+        display: inline-block;
+        float: left;
+        margin: 0 .5em;
+        padding: 0;
+        width: 5em;
+        height: 100%;
+        position: relative;
+        white-space: nowrap;
 
-		color: #666;
-		font-size: 1em;
-		font-weight: 400;
-		font-family: '@{font-family} Condensed', Arial, sans-serif;
+        color: @text-medium;
+        font-size: 1em;
+        font-weight: 400;
+        font-family: '@{font-family} Condensed', Arial, sans-serif;
 
-		a {
-			display: block;
-			padding: 3em 0 0 0;
-			line-height: 2em;
-			.transition( 0.2 );
+        a {
+            display: block;
+            padding: 3em 0 0 0;
+            line-height: 2em;
+            .transition( 0.2 );
 
-			&:hover { color: #555; }
-		}
+            &:hover { color: @text-medium; }
+        }
 
-		a:before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 1.5em;
-			line-height: 1.5em;
-			text-align: center;
-			font-size: 2em;
-			font-family: 'fontello';
-			font-style: normal;
-			font-weight: normal;
-		}
+        a:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1.5em;
+            line-height: 1.5em;
+            text-align: center;
+            font-size: 2em;
+            font-family: 'fontello';
+            font-style: normal;
+            font-weight: normal;
+        }
 
-		&.selected a {
-			color: darken( @darkOrange, 5% );
-			text-shadow: 0px 0px 3px #fff;
-		}
-	}
+        &.selected a {
+            color: darken( @darkOrange, 5% );
+            text-shadow: 0px 0px 3px #fff;
+        }
+    }
 }
 
 #nav-bio a:before { content: '\e804'; }
 #nav-work a:before { content: '\e805'; }
 #nav-contact a:before { content: '\e806'; }
 .icon:before {
-	font-family: "fontello";
-	font-style: normal;
-	font-weight: normal;
-	speak: none;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
 }
 .icon-github:before { content: '\e800'; }
 .icon-500px:before { content: '\e801'; }
@@ -262,120 +265,120 @@ h3 {
 .icon-tumblr:before { content: '\e803'; }
 
 article {
-	padding: 2em 10% 5em;
-	.opacity( 50 );
+    padding: 2em 10% 5em;
+    .opacity( 50 );
 
-	&.selected { .opacity( 100 ); }
+    &.selected { .opacity( 100 ); }
 }
 .bio {
-	a {
-		color: darken( @darkOrange, 12% );
-	}
+    a {
+        color: darken( @darkOrange, 12% );
+    }
 }
 #bio-article {
-	strong {
-		color: #333;
-		font-weight: 400;
-	}
+    strong {
+        color: #333;
+        font-weight: 400;
+    }
 
-	a.bt {
-		display: inline-block;
-	}
+    a.bt {
+        display: inline-block;
+    }
 }
 #bio {
-	font-size: 1.4em;
-	line-height: 1.7em;
-	font-weight: 300;
-	margin: 0;
-	padding: 0 0 1em 0;
+    font-size: 1.4em;
+    line-height: 1.7em;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 0 1em 0;
 }
 #cv {
-	.button( @darkOrange );
+    .button( @darkOrange );
 }
 #blog {
-	.button( @blue );
+    .button( @blue );
 }
 
 
 .work-cont {
-	a {
-		display: inline-block;
-		margin: 0.6em;
-	}
+    a {
+        display: inline-block;
+        margin: 0.6em;
+    }
 
-	img {
-		.radius( 50% );
-		.opacity( 92 );
+    img {
+        .radius( 50% );
+        .opacity( 92 );
 
-		&:hover { .opacity( 100 ) };
-	}
+        &:hover { .opacity( 100 ) };
+    }
 }
 dt {
-	color: #aaa;
-	font-weight: 300;
-	font-size: .85em;
+    color: #aaa;
+    font-weight: 300;
+    font-size: .85em;
 }
 dd {
-	padding: 0;
-	margin: 0 0 1em 0;
-	font-size: 1.4em;
-	color: #222;
-	.transition( 0.3 );
+    padding: 0;
+    margin: 0 0 1em 0;
+    font-size: 1.4em;
+    color: #222;
+    .transition( 0.3 );
 
-	&:hover { color: @darkOrange; }
+    &:hover { color: @darkOrange; }
 }
 #links {
-	a {
-		color: #aaa;
-		float: left;
-		width: 25%;
-		text-align: center;
-		font-size: 0.9em;
-		display: block;
-		line-height: 3em;
-		.transition( .3 );
+    a {
+        color: #aaa;
+        float: left;
+        width: 25%;
+        text-align: center;
+        font-size: 0.9em;
+        display: block;
+        line-height: 3em;
+        .transition( .3 );
 
-		.icon {
-			display: block;
-			font-size: 3.5em;
-			line-height: 2em;
-		}
-		&:hover { color: @blue; }
+        .icon {
+            display: block;
+            font-size: 3.5em;
+            line-height: 2em;
+        }
+        &:hover { color: @blue; }
 
-	}
+    }
 }
 
 @media screen and (max-width:950px){
-	body { font-size: 15px; }
+    body { font-size: 15px; }
 }
 
 @media screen and (max-width:800px){
-	body { font-size: 14px; }
+    body { font-size: 14px; }
 }
 
 @media screen and (max-width:640px){
-	body { font-size: 13px; }
-	h1 { display: none; }
-	#navigator {
-		li {
-			width: 4em;
-			a {
-				padding: 5em 0 0 0;
-				line-height: 0;
-			}
+    body { font-size: 13px; }
+    h1 { display: none; }
+    #navigator {
+        li {
+            width: 4em;
+            a {
+                padding: 5em 0 0 0;
+                line-height: 0;
+            }
 
-			a:before {
-				height: 2.5em;
-				line-height: 2.5em;
-			}
-			span { display: none; }
-		}
-	}
-	dd {
-		font-size: 1.3em;
-	}
+            a:before {
+                height: 2.5em;
+                line-height: 2.5em;
+            }
+            span { display: none; }
+        }
+    }
+    dd {
+        font-size: 1.3em;
+    }
 }
 
 @media screen and (max-width:400px){
-	body { font-size: 11px; }
+    body { font-size: 11px; }
 }
