@@ -204,7 +204,12 @@ h3 {
 #bio-header:before { content: '\e804'; }
 #work-header:before { content: '\e805'; }
 #contact-header:before { content: '\e806'; }
+#links-header:before { content: '\e809'; }
 .header-icon:before {
+    background-color: @darkOrange;
+}
+.icon:before {
+    .radius( 50% );
     display: block;
     width: 3rem;
     height: 3rem;
@@ -212,19 +217,17 @@ h3 {
     font-size: 1.5rem;
     margin: .5rem auto;
     color: #fff;
-    background-color: @darkOrange;
-    .radius( 50% );
-}
-.icon:before {
     font-family: "fontello";
     font-style: normal;
     font-weight: normal;
     speak: none;
 }
-.icon-github:before { content: '\e800'; }
-.icon-500px:before { content: '\e801'; }
-.icon-deviantart:before { content: '\e802'; }
-.icon-tumblr:before { content: '\e803'; }
+.icon-github:before { content: '\e800'; background-color: #333; }
+.icon-500px:before { content: '\e801'; background-color: #222; }
+.icon-deviantart:before { content: '\e802'; background-color: #05cc47; }
+.icon-tumblr:before { content: '\e803'; background-color: #36465D; }
+.icon-pinterest:before { content: '\e807'; background-color: #e10000; }
+.icon-foursquare:before { content: '\e808'; background-color: #2d5be3; }
 
 article {
     padding: 2rem 10% 5rem;
@@ -287,23 +290,13 @@ dd {
     &:hover { color: @darkOrange; }
 }
 #links {
+    text-align: center;
     a {
-        color: #aaa;
-        float: left;
-        width: 25%;
-        text-align: center;
-        font-size: 0.9rem;
-        display: block;
-        line-height: 3em;
-        .transition( .3 );
-
-        .icon {
-            display: block;
-            font-size: 3.5rem;
-            line-height: 2em;
-        }
-        &:hover { color: @blue; }
-
+        margin: .5rem;
+        display: inline-block;
+    }
+    span {
+        display: none;
     }
 }
 
