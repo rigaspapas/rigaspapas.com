@@ -206,7 +206,11 @@ h3 {
 #contact-header:before { content: '\e806'; }
 #links-header:before { content: '\e809'; }
 .header-icon:before {
-    background-color: @darkOrange;
+    background: #ff533c;
+    background: -moz-linear-gradient(top, #ff533c 0%, #c60074 100%);
+    background: -webkit-linear-gradient(top, #ff533c 0%,#c60074 100%);
+    background: linear-gradient(to bottom, #ff533c 0%,#c60074 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff533c', endColorstr='#c60074',GradientType=0 );
 }
 .icon:before {
     .radius( 50% );
@@ -238,7 +242,7 @@ article {
     }
 }
 #bio-article {
-    strong {
+    b {
         color: #333;
         font-weight: 400;
     }

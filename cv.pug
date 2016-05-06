@@ -1,0 +1,142 @@
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
+  head
+    title R&eacute;sum&eacute;
+    meta(http-equiv='Content-type', content='text/html; charset=utf-8')
+    meta(name='description', content='My resume')
+    link(rel='shortcut icon', href='favicon.ico')
+    link(rel='stylesheet', type='text/css', href='css/cv.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='format-detection', content='telephone=no')
+    //- Google fonts
+    link(href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Open+Sans+Condensed:300,700', rel='stylesheet', type='text/css')
+  body
+    header
+      h1 Rigas Papathanasopoulos
+      h2 Electrical &amp; computer engineer
+    #left
+      section
+        h1#info Personal information
+        dl
+          dt Name
+          dd Rigas Papathanasopoulos
+          dt Primary email
+          dd rigaspapas@gmail.com
+          dt Secondary email
+          dd rigaspapas@hotmail.com
+          dt Nationality
+          dd Greek
+          dt Date of birth
+          dd 2 March 1991
+      section
+        h1#experience Professional experience
+        .entry
+          .year October 2013 - February 2014
+          h2 reembed.com
+          .role Software engineer
+          .description
+            | Stayed for about four months, developing both front-end and back-end software. I contributed by coding in PHP, cakePHP, HTML, CSS, Javascript, jQuery. I learned how to work with Git for version control, and gained a powerful experience on it. It was a very pleasant and teaching experience, having the chance to collaborate with some brilliant people and create a solid product together. Reembed.com serves millions of videos every day, so I feel glad that my work is discoverable.
+        .entry
+          .year September 2014
+          h2 stantza.gr
+          .role Freelance web-developer
+          .description
+            | Designed and implemented this static website from scratch. It uses AngularJS for rendering the front end elements. It includes basic effects and features created with jQuery and Javascript.
+      section
+        h1#education Education
+        .entry
+          .year September 2008 - February 2015
+          h2
+            a(href='http://ece.ntua.gr') Electrical &amp; computer engineering
+          h3
+            a(href='http://www.ntua.gr') National Technical Univeristy of Athens
+          .description
+            | 5-year studies, equivalent to Master, 300 ECTS.
+            b Grade 7.2 / 10
+            br
+            i Major specializations:
+            |  Computer Systems, Computer Software.
+            br
+            i Minor specializations:
+            |  Electronics, Circuits, Materials, Telecommunication Systems and Computer Networks.
+            br
+            i Diploma thesis:
+            a.imp_link(href='https://onedrive.live.com/redir?resid=172D4D2E4FF229F7!84798&authkey=!ADWd2u3lcQBdMAE&ithint=file%2cpdf')
+              | Analysis and optimization of Cloud software in shared environment with adaptive resource allocation&rdquo;
+            br
+        .entry
+          .year 2002 - 2008
+          h2 General Lyceum graduation
+          .description
+            | Graduated from 22
+            sup nd
+            |  Lyceum of Athens. Grades at Panhellenic exams (entrance in higher education): Maths 18.9, Physics, 18.4, Business administration 19.5, Programming 20, Economics 19.8, Statistics (maths) 19.9, Greek language 16.5,
+            br
+            b Total 19.17 / 20
+    #right
+      section
+        h1#skill Technical skills
+        ul#skills
+          li
+            h4#expert
+              span Expert
+            ul.raw
+              li C
+              li Python
+              li Algorithms
+              li Javascript
+              li PHP
+              li CSS
+              li LESS
+              li HTML
+              li jQuery, JSON, AJAX, node.js
+              li UI/UX
+              li Responsive web design
+          li
+            h4#advanced
+              span Advanced
+            ul.raw
+              li Git / Github
+              li Databases, MySQL
+              li Security
+              li MVC
+              li ML
+              li Haskell
+              li UNIX/Linux
+          li
+            h4#intermediate
+              span Intermediate
+            ul.raw
+              li AngularJS
+              li Java
+              li Unity 3D
+              li MongoDB
+              li Computer architecture
+              li Analog electronic systems
+              li Photoshop CS6
+      section
+        h1#language Language skills
+        ul#languages.raw
+          li
+            strong Greek
+            |  (mother language)
+          li
+            |  (excellent fluency, lower level certificate, IELTS exams planned)
+      section
+        h1#hobbies Interests &amp; hobbies
+        ul.raw
+          li Travelling
+          li Photography
+          li Working out
+          li Music (basic bass skills)
+    //- Google analytics
+    script(type='text/javascript').
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24634246-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    script(type='text/javascript', src='js/cvfont.js')
