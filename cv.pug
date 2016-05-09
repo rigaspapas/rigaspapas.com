@@ -5,7 +5,8 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
     meta(http-equiv='Content-type', content='text/html; charset=utf-8')
     meta(name='description', content='My resume')
     link(rel='shortcut icon', href='favicon.ico')
-    link(rel='stylesheet', type='text/css', href='css/cv.css')
+    link(rel='stylesheet', type='text/css', href='css/icons.css')
+    link(rel='stylesheet', type='text/css', href='css/cv.min.css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='format-detection', content='telephone=no')
     //- Google fonts
@@ -14,28 +15,58 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
     header
       h1 Rigas Papathanasopoulos
       h2 Electrical &amp; computer engineer
-    #left
+    .m-column#left
       section
-        h1#info Personal information
+        h1
+          i.h-icon.icon.icon-person
+          | Personal information
         dl
           dt Name
           dd Rigas Papathanasopoulos
           dt Primary email
-          dd rigaspapas@gmail.com
+          dd
+            a(href='mailto:rigaspapas@gmail.com') rigaspapas@gmail.com
           dt Secondary email
-          dd rigaspapas@hotmail.com
+          dd
+            a(href='mailto:rigaspapas@hotmail.com') rigaspapas@hotmail.com
           dt Nationality
           dd Greek
           dt Date of birth
           dd 2 March 1991
       section
-        h1#experience Professional experience
+        h1
+          i.h-icon.icon.icon-work
+          | Professional experience
+        .entry
+          .year November 2015 - August 2016
+          h2 Hellenic Army Support Center
+          .role Software engineer
+          .description
+            | Serving my compulsory time in the Greek Army developing and
+            |  maintaining software in Java.
+        .entry
+          .year May 2015 - July 2015
+          h2 Advantis Medical Imaging (former TomoTECH)
+          .role Software engineer
+          .description
+            | Developed a web-based medical platform that included:
+            |  3D rendering of brain fibers and a
+            |  drawing tool in HTML canvas using ThreeJS,
+            |  tomograph image manipulation,
+            |  basic user system with control panel.
         .entry
           .year October 2013 - February 2014
           h2 reembed.com
           .role Software engineer
           .description
-            | Stayed for about four months, developing both front-end and back-end software. I contributed by coding in PHP, cakePHP, HTML, CSS, Javascript, jQuery. I learned how to work with Git for version control, and gained a powerful experience on it. It was a very pleasant and teaching experience, having the chance to collaborate with some brilliant people and create a solid product together. Reembed.com serves millions of videos every day, so I feel glad that my work is discoverable.
+            | Stayed for about four months, developing both front-end and back-end
+            |  software. I contributed by coding in PHP, cakePHP, HTML, CSS,
+            |  Javascript, jQuery. I learned how to work with Git for version control,
+            |  and gained a powerful experience on it. It was a very pleasant and
+            |  teaching experience, having the chance to collaborate with some
+            |  brilliant people and create a solid product together. Reembed.com
+            |  serves millions of videos every day, so I feel glad that
+            |  my work is discoverable.
         .entry
           .year September 2014
           h2 stantza.gr
@@ -43,7 +74,9 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
           .description
             | Designed and implemented this static website from scratch. It uses AngularJS for rendering the front end elements. It includes basic effects and features created with jQuery and Javascript.
       section
-        h1#education Education
+        h1
+          i.h-icon.icon.icon-school
+          | Education
         .entry
           .year September 2008 - February 2015
           h2
@@ -73,9 +106,11 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
             |  Lyceum of Athens. Grades at Panhellenic exams (entrance in higher education): Maths 18.9, Physics, 18.4, Business administration 19.5, Programming 20, Economics 19.8, Statistics (maths) 19.9, Greek language 16.5,
             br
             b Total 19.17 / 20
-    #right
+    .m-column#right
       section
-        h1#skill Technical skills
+        h1
+          i.h-icon-alt.icon.icon-skills
+          | Technical skills
         ul#skills
           li
             h4#expert
@@ -115,15 +150,20 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
               li Analog electronic systems
               li Photoshop CS6
       section
-        h1#language Language skills
+        h1
+          i.h-icon-alt.icon.icon-language
+          | Language skills
         ul#languages.raw
           li
             strong Greek
             |  (mother language)
           li
+            strong English
             |  (excellent fluency, lower level certificate, IELTS exams planned)
       section
-        h1#hobbies Interests &amp; hobbies
+        h1
+          i.h-icon-alt.icon.icon-favorite
+          | Interests &amp; hobbies
         ul.raw
           li Travelling
           li Photography
@@ -139,4 +179,4 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    script(type='text/javascript', src='js/cvfont.js')
+    script(type='text/javascript', src='js/load-fonts.js')

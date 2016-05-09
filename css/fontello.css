@@ -1,9 +1,0 @@
-@charset "UTF-8";
-
-@font-face {
-	font-family: 'fontello';
-	src: url("../fonts/fontello.eot?72668876");
-	src: url("../fonts/fontello.eot?72668876#iefix") format('embedded-opentype'), url("../fonts/fontello.woff?72668876") format('woff'), url("../fonts/fontello.ttf?72668876") format('truetype'), url("../fonts/fontello.svg?72668876#fontello") format('svg');
-	font-weight: normal;
-	font-style: normal;
-}

@@ -1,0 +1,268 @@
+@accent-dark: #244796;
+@accent-medium: #407AFF;
+@accent-light: #899FD2;
+
+@font: 'Roboto Slab',serif;
+@sans-serif: sans-serif;
+@header: 'Open Sans Condensed',sans-serif;
+
+.border-box {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  word-break: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover { color: @accent-medium; }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: #fff;
+  color: #222;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: @font;
+}
+
+header {
+  text-align: center;
+  padding: 1em;
+  font-family: @header;
+
+  h1 {
+    font-size: 2em;
+    line-height: 1.4em;
+    margin: 0;
+  }
+
+  h2 {
+    color: @accent-dark;
+    font-weight: 300;
+    font-size: 1.8em;
+    line-height: 1.4em;
+    margin: 0;
+  }
+}
+
+.m-column {
+  position: relative;
+  float: left;
+  width: 50%;
+  .border-box;
+  padding: 0 3rem;
+  text-align: left;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 1.5rem;
+    bottom: -1rem;
+    left: 1.5rem;
+    width: .2rem;
+    background-color: fade(@accent-light, 50%);
+    margin-left: -.1rem;
+    z-index: -1;
+  }
+}
+
+
+section {
+  padding-bottom: 1.5em;
+
+  h1 {
+    padding: 0;
+    margin: 0;
+
+    font-size: 2rem;
+    line-height: 3.6rem;
+    font-weight: 400;
+    font-family: @header;
+    color: #899FD2;
+    border-bottom: 1px solid rgba(137, 159, 210, 0.3);
+    position: relative;
+  }
+
+  h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.7em;
+    color: #000;
+  }
+  h3 {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+dt {
+  font-size: .8rem;
+  line-height: 1rem;
+  font-family: @sans-serif;
+  color: #888;
+}
+dd {
+  margin: 0 0 0.5em 0;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.entry {
+  margin: 1em 0;
+}
+
+.year {
+  color: @accent-dark;
+  font-size: 1em;
+  line-height: 1.4em;
+  font-family: @header;
+  font-weight: bold;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+
+    position: absolute;
+    top: 1px;
+    margin-left: -.5rem;
+    left: -1.5rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+    border: .2rem solid @accent-medium;
+    border-radius: 50%;
+    .border-box;
+  }
+}
+.role,
+.entry h3 {
+  font-size: 1.2em;
+  line-height: 1.4em;
+  color: @accent-medium;
+  text-decoration: underline;
+}
+.description {
+  color: #666;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  line-height: 1.7em;
+}
+
+@width: 3px;
+
+#skills {
+  h4 {
+    color: @accent-dark;
+    border-bottom: @width solid #ddd;
+    position: relative;
+    margin: 1.5em 0;
+    font-size: 1.3em;
+    font-family: @header;
+    font-weight: 400;
+    line-height: 0;
+
+    > span {
+      position: relative;
+      top: @width/2;
+      padding: 0 0.4em;
+      background-color: @accent-dark;
+      color: #fff;
+      z-index: 1;
+      border-radius: 3px;
+    }
+
+    &:before {
+      content: '';
+      z-index: 0;
+      position: absolute;
+      bottom: -@width;
+      left: 0;
+      height: @width;
+      background-color: @accent-dark;
+    }
+  }
+}
+#expert:before { width: 100% }
+#advanced:before { width: 80% }
+#intermediate:before { width: 60% }
+
+
+ul.raw {
+  font-size: 1.1em;
+
+  li {
+    display: inline-block;
+
+    &:after {
+      content: '//';
+      color: @accent-light;
+      margin: 0 0.3em;
+    }
+  }
+}
+
+#languages {
+  color: #777;
+
+  strong { color: #222 }
+}
+
+.h-icon, .h-icon-alt {
+  font-size: 1.2rem;
+  position: absolute;
+  display: block;
+  left: -3rem;
+  margin: .7rem .35rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  line-height: 2.3rem;
+  text-align: center;
+  background-color: @accent-dark;
+  color: #fff;
+  border-radius: 50%;
+}
+.h-icon-alt {
+  background-color: @accent-light;
+}
+
+
+.imp_link {
+  color: #000;
+  text-decoration: underline;
+}
+
+@media screen and (max-width:700px){
+  body { font-size: 14px; }
+}
+
+@media screen and (max-width:600px){
+  body { font-size: 13px; }
+
+  .m-column {
+    float: none;
+    width: auto;
+  }
+}
+
+@media screen and (max-width:400px){
+  body { font-size: 12px; }
+}
