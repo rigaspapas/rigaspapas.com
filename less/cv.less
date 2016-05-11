@@ -1,8 +1,12 @@
 @accent-dark: #244796;
-@accent-medium: #407AFF;
+@accent-medium: #00A5FF;
 @accent-light: #899FD2;
+@blue-dark: #33425F;
+@blue-silk: #a9d5f8;
+@purple-silk: #f0d9ff;
+@rose-silk: #edd4d1;
 
-@font: 'Roboto Slab',serif;
+@font: 'Roboto Slab', serif;
 @sans-serif: sans-serif;
 @header: 'Open Sans Condensed',sans-serif;
 
@@ -10,6 +14,29 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.xsmall { font-size: .7rem; }
+.small  { font-size: .8rem; }
+.medium { font-size: .9rem; }
+.big    { font-size: 1.2rem; }
+.xbig   { font-size: 1.6rem; }
+
+.color-light  { color: #aaa; }
+.color-normal { color: #555; }
+.color-dark   { color: #222; }
+
+.weight-light { font-weight: 300; }
+.weight-normal { font-weight: 400; }
+.weight-bold { font-weight: 700; }
+
+.nospace {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: fade(@accent-light, 80%);
 }
 
 * {
@@ -27,242 +54,231 @@ body {
   margin: 0;
   padding: 0;
 
-  background-color: #fff;
-  color: #222;
-  font-size: 16px;
-  line-height: 20px;
+  .color-normal;
+  line-height: 1.4em;
   font-family: @font;
+  text-align: left;
 }
 
 header {
-  text-align: center;
-  padding: 1em;
-  font-family: @header;
+  padding: 1rem 0;
+  line-height: 2rem;
 
   h1 {
-    font-size: 2em;
-    line-height: 1.4em;
-    margin: 0;
+    font-size: 2rem;
+    .weight-normal;
+    .nospace;
+    &:after { display: none; }
   }
 
   h2 {
     color: @accent-dark;
-    font-weight: 300;
-    font-size: 1.8em;
-    line-height: 1.4em;
-    margin: 0;
+    .weight-light;
+    font-size: 1.8rem;
+    .nospace;
   }
 }
-
-.m-column {
+h1, h2, h3 {
+  font-family: @header;
+}
+h1 {
+  font-weight: 300;
+  text-transform: uppercase;
+  .xbig;
+  line-height: 2em;
   position: relative;
-  float: left;
-  width: 50%;
-  .border-box;
-  padding: 0 3rem;
-  text-align: left;
 
-  &:before {
-    content: ' ';
+  // Middle-border
+  &:after {
+    content: '';
     position: absolute;
-    top: 1.5rem;
-    bottom: -1rem;
-    left: 1.5rem;
-    width: .2rem;
-    background-color: fade(@accent-light, 50%);
-    margin-left: -.1rem;
-    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 0;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    z-index: 0;
   }
-}
 
-
-section {
-  padding-bottom: 1.5em;
-
-  h1 {
-    padding: 0;
-    margin: 0;
-
-    font-size: 2rem;
-    line-height: 3.6rem;
-    font-weight: 400;
-    font-family: @header;
-    color: #899FD2;
-    border-bottom: 1px solid rgba(137, 159, 210, 0.3);
+  .txt {
+    display: inline-block;
+    background-color: #fff;
     position: relative;
-  }
-
-  h2 {
-    padding: 0;
-    margin: 0;
-    font-size: 1.5em;
-    font-weight: 400;
-    line-height: 1.7em;
-    color: #000;
-  }
-  h3 {
-    padding: 0;
-    margin: 0;
-    font-weight: 400;
+    z-index: 1;
+    padding-right: 1em;
   }
 }
-
+ul {
+  list-style-type: none;
+  .nospace;
+}
+li {
+  padding: 0 0 1rem 0;
+  line-height: 1.5em;
+}
 dt {
-  font-size: .8rem;
-  line-height: 1rem;
-  font-family: @sans-serif;
-  color: #888;
+  .small;
+  .color-light;
 }
 dd {
-  margin: 0 0 0.5em 0;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
+  .nospace;
+  .big;
+  .color-dark;
+  .weight-light;
+  line-height: 1.5em;
+}
+b {
+  .color-dark;
+}
+
+// MAIN LAYOUT AND COLORS
+.color-1 {
+  background-size: fill;
+  background-attachment: fixed;
+  background: @blue-silk;
+  background: -moz-linear-gradient(-45deg, @blue-silk 0%, @purple-silk 50%, @rose-silk 100%);
+  background: -webkit-linear-gradient(-45deg, @blue-silk 0%,@purple-silk 50%,@rose-silk 100%);
+  background: linear-gradient(135deg, @blue-silk 0%,@purple-silk 50%,@rose-silk 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@blue-silk', endColorstr='@rose-silk',GradientType=1 );
+}
+
+#content {
+  width: 98%;
+  max-width: 50rem;
+  padding: 1rem 3rem;
+  box-sizing: border-box;
+  margin: 1rem auto;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,.06);
+}
+
+// HEADER ICONS
+.h-icon {
+  position: absolute;
+  left: -3rem;
+  top: 0;
+  width: 3rem;
+  text-align: center;
+  font-size: .8em;
+  color: desaturate(mix(@accent-dark, @accent-light, 20%),5%);
+}
+
+// WORK & EDUCATION ENTRIES
+.timeline {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 3rem;
+    bottom: 0;
+    left: -1.5rem;
+    border-left: 1px solid fade(@blue-silk, 30%);
+  }
+}
+.year:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1.5rem;
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  margin-top: .5rem;
+  background-color: #fff;
+  border: 1px solid fade(@blue-silk, 90%);
+  box-sizing: border-box;
+  border-radius: 50%;
 }
 
 .entry {
-  margin: 1em 0;
+  margin-bottom: 1rem;
 }
-
 .year {
-  color: @accent-dark;
-  font-size: 1em;
-  line-height: 1.4em;
-  font-family: @header;
-  font-weight: bold;
   position: relative;
-
-  &:after {
-    content: '';
-    display: block;
-
-    position: absolute;
-    top: 1px;
-    margin-left: -.5rem;
-    left: -1.5rem;
-    width: 1rem;
-    height: 1rem;
-    background-color: #fff;
-    border: .2rem solid @accent-medium;
-    border-radius: 50%;
-    .border-box;
-  }
+  .color-light;
+  .small;
 }
-.role,
-.entry h3 {
-  font-size: 1.2em;
-  line-height: 1.4em;
+.entry-title {
+  .big;
+  .color-dark;
+  line-height: 1.6em;
+}
+.role {
   color: @accent-medium;
-  text-decoration: underline;
+  padding-bottom: .2em;
 }
 .description {
-  color: #666;
-  font-size: 1em;
-  line-height: 1.5em;
+  .weight-light;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  line-height: 1.7em;
+// LISTS OF ITEMS
+ul.raw {
+  overflow: hidden;
+}
+ul.raw > li {
+  .small;
+  .color-dark;
+  display: inline-block;
+  float: left;
+  margin: .2rem .6rem .2rem 0;
+  padding: .2rem .7rem;
+  border-radius: 1rem;
+  border: 1px solid @blue-silk;
+
+  &::before {
+    content: '+ ';
+    color: @accent-light;
+  }
 }
 
-@width: 3px;
-
-#skills {
-  h4 {
-    color: @accent-dark;
-    border-bottom: @width solid #ddd;
+// HEADERS FOR SKILLS
+h4 {
+  position: relative;
+  > span {
     position: relative;
-    margin: 1.5em 0;
-    font-size: 1.3em;
-    font-family: @header;
-    font-weight: 400;
-    line-height: 0;
+    background-color: #fff;
+    padding-right: 1em;
+    z-index: 1;
+    display: inline-block;
+    //min-width: 6rem;
+  }
 
-    > span {
-      position: relative;
-      top: @width/2;
-      padding: 0 0.4em;
-      background-color: @accent-dark;
-      color: #fff;
-      z-index: 1;
-      border-radius: 3px;
-    }
-
-    &:before {
-      content: '';
-      z-index: 0;
-      position: absolute;
-      bottom: -@width;
-      left: 0;
-      height: @width;
-      background-color: @accent-dark;
-    }
+  &:before {
+    content: '';
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: @accent-medium;
   }
 }
 #expert:before { width: 100% }
 #advanced:before { width: 80% }
 #intermediate:before { width: 60% }
 
-
-ul.raw {
-  font-size: 1.1em;
-
-  li {
-    display: inline-block;
-
-    &:after {
-      content: '//';
-      color: @accent-light;
-      margin: 0 0.3em;
-    }
-  }
+// LANGUAGES LIST
+.list-title {
+  .color-dark;
+}
+.list-description {
+  .weight-light;
 }
 
-#languages {
-  color: #777;
-
-  strong { color: #222 }
-}
-
-.h-icon, .h-icon-alt {
-  font-size: 1.2rem;
-  position: absolute;
-  display: block;
-  left: -3rem;
-  margin: .7rem .35rem;
-  width: 2.3rem;
-  height: 2.3rem;
-  line-height: 2.3rem;
-  text-align: center;
-  background-color: @accent-dark;
-  color: #fff;
-  border-radius: 50%;
-}
-.h-icon-alt {
-  background-color: @accent-light;
-}
-
-
-.imp_link {
-  color: #000;
-  text-decoration: underline;
-}
-
+// RESPONSIVE STYLING
 @media screen and (max-width:700px){
-  body { font-size: 14px; }
+  body { font-size: 90%; }
 }
 
 @media screen and (max-width:600px){
-  body { font-size: 13px; }
-
-  .m-column {
-    float: none;
-    width: auto;
-  }
+  body { font-size: 80%; }
 }
 
 @media screen and (max-width:400px){
-  body { font-size: 12px; }
+  body { font-size: 70%; }
 }

@@ -30,3 +30,5 @@ gulp.task('default', function() {
     gulp.watch('*.pug', ['pug2html']);
     gulp.watch('less/*.less', ['less2css']);
 })
+
+gulp.task('build', ['pug2html', 'less2css']);

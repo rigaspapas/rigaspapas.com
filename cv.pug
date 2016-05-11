@@ -1,5 +1,5 @@
 doctype html
-html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
+html
   head
     title R&eacute;sum&eacute;
     meta(http-equiv='Content-type', content='text/html; charset=utf-8')
@@ -11,15 +11,16 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
     meta(name='format-detection', content='telephone=no')
     //- Google fonts
     link(href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Open+Sans+Condensed:300,700', rel='stylesheet', type='text/css')
-  body
-    header
-      h1 Rigas Papathanasopoulos
-      h2 Electrical &amp; computer engineer
-    .m-column#left
+  body.color-1
+    #content
+      header
+        h1 Rigas Papathanasopoulos
+        h2 Electrical &amp; computer engineer
+
       section
         h1
-          i.h-icon.icon.icon-person
-          | Personal information
+          i.h-icon.icon.icon-person-circle
+          span.txt Personal information
         dl
           dt Name
           dd Rigas Papathanasopoulos
@@ -33,20 +34,20 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
           dd Greek
           dt Date of birth
           dd 2 March 1991
-      section
+      section.timeline
         h1
           i.h-icon.icon.icon-work
-          | Professional experience
+          span.txt Professional experience
         .entry
           .year November 2015 - August 2016
-          h2 Hellenic Army Support Center
+          .entry-title Hellenic Army Support Center
           .role Software engineer
           .description
             | Serving my compulsory time in the Greek Army developing and
             |  maintaining software in Java.
         .entry
           .year May 2015 - July 2015
-          h2 Advantis Medical Imaging (former TomoTECH)
+          .entry-title Advantis Medical Imaging (former TomoTECH)
           .role Software engineer
           .description
             | Developed a web-based medical platform that included:
@@ -56,7 +57,7 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
             |  basic user system with control panel.
         .entry
           .year October 2013 - February 2014
-          h2 reembed.com
+          .entry-title reembed.com
           .role Software engineer
           .description
             | Stayed for about four months, developing both front-end and back-end
@@ -69,48 +70,55 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
             |  my work is discoverable.
         .entry
           .year September 2014
-          h2 stantza.gr
+          .entry-title stantza.gr
           .role Freelance web-developer
           .description
-            | Designed and implemented this static website from scratch. It uses AngularJS for rendering the front end elements. It includes basic effects and features created with jQuery and Javascript.
-      section
+            | Designed and implemented this static website from scratch.
+            |  It uses AngularJS for rendering the front end elements.
+            |  It includes basic effects and features created with jQuery
+            |  and Javascript.
+
+      section.timeline
         h1
           i.h-icon.icon.icon-school
-          | Education
+          span.txt Education
         .entry
           .year September 2008 - February 2015
-          h2
+          .entry-title
             a(href='http://ece.ntua.gr') Electrical &amp; computer engineering
-          h3
+          .role
             a(href='http://www.ntua.gr') National Technical Univeristy of Athens
           .description
             | 5-year studies, equivalent to Master, 300 ECTS.
+            br
             b Grade 7.2 / 10
             br
-            i Major specializations:
+            .xsmall Major specializations:
             |  Computer Systems, Computer Software.
             br
-            i Minor specializations:
+            .xsmall Minor specializations:
             |  Electronics, Circuits, Materials, Telecommunication Systems and Computer Networks.
             br
-            i Diploma thesis:
+            .xsmall Diploma thesis:
             a.imp_link(href='https://onedrive.live.com/redir?resid=172D4D2E4FF229F7!84798&authkey=!ADWd2u3lcQBdMAE&ithint=file%2cpdf')
-              | Analysis and optimization of Cloud software in shared environment with adaptive resource allocation&rdquo;
+              | &ldquo;Analysis and optimization of Cloud software in shared environment with adaptive resource allocation&rdquo;
             br
         .entry
           .year 2002 - 2008
-          h2 General Lyceum graduation
+          .entry-title General Lyceum graduation
           .description
             | Graduated from 22
             sup nd
-            |  Lyceum of Athens. Grades at Panhellenic exams (entrance in higher education): Maths 18.9, Physics, 18.4, Business administration 19.5, Programming 20, Economics 19.8, Statistics (maths) 19.9, Greek language 16.5,
+            | Lyceum of Athens. Grades at Panhellenic exams.
+            |  Entrance in higher education: Maths 18.9, Physics, 18.4,
+            |  Business administration 19.5, Programming 20, Economics 19.8,
+            |  Statistics (maths) 19.9, Greek language 16.5
             br
             b Total 19.17 / 20
-    .m-column#right
       section
         h1
-          i.h-icon-alt.icon.icon-skills
-          | Technical skills
+          i.h-icon.icon.icon-skills
+          span.txt Technical skills
         ul#skills
           li
             h4#expert
@@ -119,56 +127,56 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
               li C
               li Python
               li Algorithms
-              li Javascript
-              li PHP
-              li CSS
-              li LESS
-              li HTML
-              li jQuery, JSON, AJAX, node.js
+              li Javascript, jQuery
+              li NodeJS, Express
+              li Gulp
+              li CSS, LESS
+              li HTML, Pug
               li UI/UX
-              li Responsive web design
+              li Git
           li
             h4#advanced
               span Advanced
             ul.raw
-              li Git / Github
+              li PHP
+              li Java
+              li AngularJS
               li Databases, MySQL
               li Security
               li MVC
-              li ML
-              li Haskell
               li UNIX/Linux
           li
             h4#intermediate
               span Intermediate
             ul.raw
-              li AngularJS
-              li Java
-              li Unity 3D
-              li MongoDB
               li Computer architecture
+              li MongoDB
+              li Unity 3D
               li Analog electronic systems
-              li Photoshop CS6
+              li Haskell
+              li ML
+              li Assembly
       section
         h1
-          i.h-icon-alt.icon.icon-language
-          | Language skills
-        ul#languages.raw
+          i.h-icon.icon.icon-language
+          span.txt Language skills
+        ul
           li
-            strong Greek
-            |  (mother language)
+            span.list-title Greek
+            span.list-description  (mother language)
           li
-            strong English
-            |  (excellent fluency, lower level certificate, IELTS exams planned)
+            span.list-title English
+            span.list-description  (excellent fluency, lower level certificate, IELTS exams planned)
       section
         h1
-          i.h-icon-alt.icon.icon-favorite
-          | Interests &amp; hobbies
+          i.h-icon.icon.icon-favorite
+          span.txt Interests &amp; hobbies
         ul.raw
           li Travelling
           li Photography
           li Working out
           li Music (basic bass skills)
+
     //- Google analytics
     script(type='text/javascript').
       var _gaq = _gaq || [];
@@ -179,4 +187,3 @@ html(xmlns='http://www.w3.org/1999/xhtml', xml:lang='en', lang='en')
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    script(type='text/javascript', src='js/load-fonts.js')
