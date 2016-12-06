@@ -1,0 +1,245 @@
+/*********************
+  LESS FUNCTIONS
+*********************/
+@font-family: 'Lato', -apple-system, 'Segoe UI', Arial, sans-serif;
+@font-family-serif: 'Roboto Slab', serif;
+@font-family-header: 'Lato', -apple-system, 'Segoe UI', Arial, sans-serif;
+
+.transition( @time ) {
+  -webkit-transition: ~'all @{time}s ease-out';
+     -moz-transition: ~'all @{time}s ease-out';
+       -o-transition: ~'all @{time}s ease-out';
+          transition: ~'all @{time}s ease-out';
+}
+
+/**
+ * COLORS
+ */
+@blue: #14528B;
+@green: #2f8646;
+@text: #fff;
+@accent-dark: #244796;
+@accent-medium: #00A5FF;
+@accent-light: #899FD2;
+@blue-dark: #33425F;
+@blue-silk: #a9d5f8;
+@purple-silk: #f0d9ff;
+@rose-silk: #edd4d1;
+
+/**
+ * CLASSES
+ */
+.border-box {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.xsmall { font-size: .7rem; }
+.small  { font-size: .8rem; }
+.medium { font-size: .9rem; }
+.big    { font-size: 1.2rem; }
+.xbig   { font-size: 1.6rem; }
+
+.color-light  { color: #aaa; }
+.color-normal { color: #555; }
+.color-dark   { color: #222; }
+
+.weight-light { font-weight: 300; }
+.weight-normal { font-weight: 400; }
+
+.nospace {
+  margin: 0;
+  padding: 0;
+}
+
+
+::selection {
+  background-color: #000;
+  color: #fff;
+}
+img {
+  border: none;
+}
+a {
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  background: @blue url('../images/background.jpg') center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  color: @text;
+  font-family: @font-family;
+  text-align: center;
+}
+body:before {
+  content: '';
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(17, 18, 36, 0.78);
+}
+/*********************
+  FIXED BG IMAGE
+  FOR OLD IEs
+*********************/
+#background {
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 4rem;
+}
+
+
+h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+h2 {
+  margin: 2rem 0 0 0;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 100;
+  line-height: 2rem;
+  word-break: break-word;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 6rem;
+    height: 2px;
+    background-color: lighten(@green, 10%);
+  }
+
+  a {
+    font-weight: 400;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.links {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -1rem;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.7rem;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem;
+  width: 10rem;
+  margin: 0 2rem;
+  .transition( 0.1 );
+}
+.btn_1 {
+  background-color: fade(@blue, 50%);
+
+  &:hover { color:#fff; background-color: fade(@blue, 80%);; }
+  &:active { color:#fff; background-color: lighten(@blue, 10%); }
+}
+
+.btn_2 {
+  background-color: fade(@green, 50%);
+
+  &:hover { color:#fff; background-color: fade(@green, 80%); }
+  &:active { color:#fff; background-color: lighten(@green, 10%); }
+}
+
+
+.cv_close {
+  position: fixed;
+  top: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 5px;
+  text-transform: uppercase;
+  font-family: @font-family;
+  .weight-light;
+  .big;
+}
+
+.icon:before {
+  .transition(.3);
+}
+.icon-github:hover:before { color: #333; }
+.icon-500px:hover:before { color: #222; }
+.icon-deviantart:hover:before { color: #05cc47; }
+.icon-tumblr:hover:before { color: #36465D; }
+.icon-pinterest:hover:before { color: #e10000; }
+.icon-foursquare:hover:before { color: #FF006F; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  a {
+    font-size: 2rem;
+    margin: .5rem;
+    display: inline-block;
+  }
+  span {
+    display: none;
+  }
+}
+
+@import "cv.less";
+@import "icons.less";
+
+@media screen and (max-width:640px){
+  html { font-size: 85%; }
+  .btn {
+    display: block;
+    margin: 1rem auto;
+  }
+  section {
+    margin-top: -3rem;
+  }
+}
+
+@media screen and (max-width:400px){
+  html { font-size: 75%; }
+}
