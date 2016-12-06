@@ -1,0 +1,66 @@
+doctype html
+html
+  head
+    title Rigas Papas
+    meta(http-equiv='Content-type', content='text/html; charset=utf-8')
+    meta(name='description', content='Rigas Papathanasopoulos. Software engineer @ Arrikto.')
+    link(rel='shortcut icon', href='favicon.ico')
+    link(rel='stylesheet', type='text/css', href='css/style.min.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='format-detection', content='telephone=no')
+  body
+    #content
+      header
+        h1 Rigas Papathanasopoulos
+        h2
+          | Software engineer @
+          a(href='http://www.arrikto.com') Arrikto
+      section.links
+        a.btn.btn_1#resume_btn(href='#')
+          | R&eacute;sum&eacute;
+        a.btn.btn_2(href='/blog')
+          | My blog
+      footer
+        //- Function for printing links
+        mixin IconLink(name, text, link)
+          a(id=name, href=link)
+            i.link-icon.icon(class!=attributes.IconClass)
+            span= text
+        +IconLink('github', 'Github', 'https://github.com/rigaspapas/')(IconClass='icon-github')
+        +IconLink('500px', '500px', 'http://500px.com/rhgas')(IconClass='icon-500px')
+        +IconLink('tumblr', 'Design blog', 'http://footballdesign.tumblr.com/')(IconClass='icon-tumblr')
+        +IconLink('deviantart', 'DeviantArt', 'http://rigaspapas.deviantart.com/')(IconClass='icon-deviantart')
+        +IconLink('pinterest', 'Pinterest', 'https://www.pinterest.com/rigaspapas/')(IconClass='icon-pinterest')
+        +IconLink('foursquare', 'Foursquare', 'https://foursquare.com/rigaspapas')(IconClass='icon-foursquare')
+      article#cv.hidden
+        include pug/cv.pug
+        a#cv_close.cv_close(href='#') Close
+    //- If IE lower than 10
+    <!--[if lt IE 10]>
+      img#background(alt='background-image', src='images/background.jpg')
+    <![endif]-->
+    script(async, type='text/javascript').
+      window.onload = function(){
+        var googleFonts = document.createElement('link');
+        googleFonts.setAttribute('rel', 'stylesheet');
+        googleFonts.setAttribute('type', 'text/css');
+        googleFonts.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Lato:100,400,700');
+        document.getElementsByTagName('head')[0].appendChild(googleFonts);
+
+        var btn = document.getElementById('resume_btn');
+        var btn_close = document.getElementById('cv_close');
+        var cv = document.getElementById('cv');
+        btn_close.onclick = btn.onclick = function() {
+          cv.className = cv.className == '' ? 'hidden' : '';
+        };
+      }
+    //- Google analytics
+    script(async, type='text/javascript').
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24634246-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
