@@ -11,9 +11,11 @@
     "eslint": "^3.11.1",
     "eslint-config-google": "^0.7.1",
     "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.2.0",
     "gulp-less": "^3.1.0",
     "gulp-pug": "^2.0.0",
     "gulp-rename": "^1.2.2",
+    "imagemin": "^5.2.2",
     "pug-cli": "^1.0.0-alpha1"
   },
   "scripts": {

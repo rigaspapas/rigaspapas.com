@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const pug = require('gulp-pug');
 const less = require('gulp-less');
 const rename = require('gulp-rename');
+const imagemin = require('gulp-imagemin');
 
 gulp.task('pug2html', () => {
   return gulp.src('pug/*.pug')
@@ -24,6 +25,18 @@ gulp.task('less2css', () => {
     .pipe(gulp.dest('../css/'));
 });
 
+// Optimize images
+gulp.task('optimize-images', () => {
+  return gulp.src('images/**/*')
+    .pipe(imagemin([
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+    ], {
+      verbose: true
+    }))
+    .pipe(gulp.dest('../images/'));
+});
+
 
 gulp.task('default', () => {
     gulp.start('build');
@@ -31,4 +44,4 @@ gulp.task('default', () => {
     gulp.watch('less/*.less', ['less2css']);
 });
 
-gulp.task('build', ['pug2html', 'less2css']);
+gulp.task('build', ['pug2html', 'less2css', 'optimize-images']);
