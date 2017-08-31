@@ -1,6 +1,7 @@
 # NPM & Yarn
-src/node_modules
-src/yarn.lock
-# Generated/minified files
-*.html
-css/
+dist
+node_modules
+yarn.lock
+**/.tags
+*.swp
+**/.DS_Store

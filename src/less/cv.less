@@ -11,6 +11,7 @@ article {
   .color-normal;
   line-height: 1.4em;
   text-align: left;
+  font-family: @font-family-header;
 
   position: fixed;
   top: 0;
@@ -42,14 +43,14 @@ article {
     &:hover { color: @accent-medium; }
   }
 
-  section {
-    margin: 1rem 0;
+  section{
+    margin: 0 0 1.5rem 0;
   }
 
   h1 {
     text-transform: uppercase;
     .xbig;
-    font-family: @font-family-header;
+    font-family: @font-family;
     line-height: 2em;
     position: relative;
     color: #aaa;
@@ -85,30 +86,8 @@ li {
   padding: 0 0 1rem 0;
   line-height: 1.5em;
 }
-dt {
-  .small;
-  .color-light;
-}
-dd {
-  .nospace;
-  .big;
-  .color-dark;
-  .weight-light;
-  line-height: 1.5em;
-}
 b {
   .color-dark;
-}
-
-// MAIN LAYOUT AND COLORS
-.color-1 {
-  background-size: fill;
-  background-attachment: fixed;
-  background: @blue-silk;
-  background: -moz-linear-gradient(-45deg, @blue-silk 0%, @purple-silk 50%, @rose-silk 100%);
-  background: -webkit-linear-gradient(-45deg, @blue-silk 0%,@purple-silk 50%,@rose-silk 100%);
-  background: linear-gradient(135deg, @blue-silk 0%,@purple-silk 50%,@rose-silk 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@blue-silk', endColorstr='@rose-silk',GradientType=1 );
 }
 
 // HEADER ICONS
@@ -151,7 +130,7 @@ b {
 }
 
 .entry {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .entry-image {
@@ -174,13 +153,15 @@ b {
   .big;
   .color-dark;
   line-height: 1.6em;
+  font-family: @font-family;
 }
 .role {
   color: @accent-medium;
   padding-bottom: .2em;
 }
 .description {
-  .weight-light;
+  .medium;
+  line-height: 1.5rem;
 }
 
 // LISTS OF ITEMS
@@ -196,6 +177,7 @@ ul.raw > li {
   padding: .3rem .7rem;
   border-radius: 1rem;
   border: 1px solid @blue-silk;
+  font-family: @font-family;
 
   &::before {
     content: '+ ';
@@ -206,6 +188,7 @@ ul.raw > li {
 // HEADERS FOR SKILLS
 h4 {
   position: relative;
+  font-family: @font-family;
 
   > span {
     position: relative;

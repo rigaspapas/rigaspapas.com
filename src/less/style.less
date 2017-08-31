@@ -1,21 +1,17 @@
 /*********************
   LESS FUNCTIONS
 *********************/
-@font-family: 'Roboto Slab', serif;
+@font-family: 'Exo', sans-serif;
 @font-family-header: -apple-system, 'Segoe UI', Arial, sans-serif;
 
-.transition( @time ) {
-  -webkit-transition: ~'all @{time}s ease-out';
-     -moz-transition: ~'all @{time}s ease-out';
-       -o-transition: ~'all @{time}s ease-out';
-          transition: ~'all @{time}s ease-out';
+.transition(@time) {
+  transition: ~'all @{time}s ease-out';
 }
 
 /**
  * COLORS
  */
 @blue: #14528B;
-@green: #2f8646;
 @text: #fff;
 @accent-dark: #244796;
 @accent-medium: #00A5FF;
@@ -29,9 +25,7 @@
  * CLASSES
  */
 .border-box {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .xsmall { font-size: .7rem; }
@@ -72,7 +66,7 @@ body {
   margin: 0;
   padding: 0;
 
-  background: @blue url('../images/background.jpg') center no-repeat;
+  background: #1d2232 url('../images/background.jpg') center no-repeat;
   background-size: cover;
   background-attachment: fixed;
 
@@ -148,7 +142,9 @@ h2 {
     margin: 0 auto;
     width: 6rem;
     height: 2px;
-    background-color: lighten(@green, 10%);
+    background: linear-gradient(90deg,
+                                @purple-silk 0%,
+                                @accent-light 100%);
   }
 
   a {
@@ -178,44 +174,64 @@ h2 {
   padding: 1rem;
   width: 10rem;
   margin: 0 2rem;
-  .transition( 0.1 );
+  .transition(.3);
+  border: solid .1rem #fff;
+  border-radius: 4rem;
 }
 .btn_1 {
-  background-color: fade(@blue, 50%);
+  background-size: fill;
+  background-attachment: fixed;
+  background: linear-gradient(30deg,
+                              fade(@blue-silk, 30%) 0%,
+                              fade(@purple-silk, 33%) 50%,
+                              fade(@rose-silk, 36%) 100%);
 
-  &:hover { color:#fff; background-color: fade(@blue, 80%);; }
-  &:active { color:#fff; background-color: lighten(@blue, 10%); }
+  &:hover {
+    background: linear-gradient(30deg,
+                                fade(@blue-silk, 30%) -10%,
+                                fade(@purple-silk, 33%) 10%,
+                                fade(@rose-silk, 36%) 100%);
+  }
 }
 
 .btn_2 {
-  background-color: fade(@green, 50%);
+  background-size: fill;
+  background-attachment: fixed;
+  background: linear-gradient(135deg,
+                              fade(@accent-light, 30%) 0%,
+                              fade(@blue-silk, 33%) 50%,
+                              fade(@blue, 36%) 100%);
 
-  &:hover { color:#fff; background-color: fade(@green, 80%); }
-  &:active { color:#fff; background-color: lighten(@green, 10%); }
+  &:hover {
+    background: linear-gradient(135deg,
+                                fade(@accent-light, 30%) -10%,
+                                fade(@blue-silk, 33%) 10%,
+                                fade(@blue, 36%) 100%);
+  }
 }
 
 
 .cv_close {
+  z-index: 3;
   position: fixed;
-  top: 0;
-  right: 0;
-  color: rgba(255, 255, 255, 0.75);
-  padding: 5px;
+  top: 1rem;
+  right: 50%;
+  margin-right: -1rem;
+  height: 2rem;
+  width: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  background-color: #fff;
+  color: @accent-light;
+  border-radius: 50%;
   text-transform: uppercase;
-  font-family: @font-family;
-  .weight-light;
   .big;
 }
 
 .icon:before {
   .transition(.3);
 }
-.icon-github:hover:before { color: #333; }
-.icon-500px:hover:before { color: #222; }
-.icon-deviantart:hover:before { color: #05cc47; }
-.icon-tumblr:hover:before { color: #36465D; }
-.icon-pinterest:hover:before { color: #e10000; }
-.icon-foursquare:hover:before { color: #FF006F; }
+.icon:hover:before { color: @blue-silk; }
 
 footer {
   position: absolute;

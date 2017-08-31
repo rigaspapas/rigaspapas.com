@@ -28,13 +28,10 @@ html
             span= text
         +IconLink('github', 'Github', 'https://github.com/rigaspapas/')(IconClass='icon-github')
         +IconLink('500px', '500px', 'http://500px.com/rhgas')(IconClass='icon-500px')
-        +IconLink('tumblr', 'Design blog', 'http://footballdesign.tumblr.com/')(IconClass='icon-tumblr')
-        +IconLink('deviantart', 'DeviantArt', 'http://rigaspapas.deviantart.com/')(IconClass='icon-deviantart')
-        +IconLink('pinterest', 'Pinterest', 'https://www.pinterest.com/rigaspapas/')(IconClass='icon-pinterest')
-        +IconLink('foursquare', 'Foursquare', 'https://foursquare.com/rigaspapas')(IconClass='icon-foursquare')
+        +IconLink('email', 'Email', 'mailto:rigaspapas@gmail.com')(IconClass='icon-mail')
       article#cv.hidden
-        include pug/cv.pug
-        a#cv_close.cv_close(href='#') Close
+        include src/pug/cv.pug
+        a#cv_close.cv_close(href='#') &times;
     //- If IE lower than 10
     <!--[if lt IE 10]>
       img#background(alt='background-image', src='images/background.jpg')
@@ -44,7 +41,7 @@ html
         var googleFonts = document.createElement('link');
         googleFonts.setAttribute('rel', 'stylesheet');
         googleFonts.setAttribute('type', 'text/css');
-        googleFonts.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
+        googleFonts.setAttribute('href', 'https://fonts.googleapis.com/css?family=Exo:300,400,700');
         document.getElementsByTagName('head')[0].appendChild(googleFonts);
 
         var btn = document.getElementById('resume_btn');
