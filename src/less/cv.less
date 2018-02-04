@@ -1,7 +1,7 @@
 article {
   width: 90%;
   max-width: 50rem;
-  padding: 1rem 3rem;
+  padding: 1rem 4rem;
   box-sizing: border-box;
   margin: 2rem auto;
   background-color: #fff;
@@ -48,12 +48,12 @@ article {
   }
 
   h1 {
-    text-transform: uppercase;
-    .xbig;
+    .big;
     font-family: @font-family;
-    line-height: 2em;
+    line-height: 3em;
     position: relative;
-    color: #aaa;
+    .color-dark;
+    .weight-bold;
 
     // Middle-border
     &:after {
@@ -94,10 +94,9 @@ b {
 .h-icon {
   position: absolute;
   left: -3rem;
-  top: 0;
+  top: -.1rem;
   width: 3rem;
   text-align: center;
-  font-size: .8em;
 }
 
 // WORK & EDUCATION ENTRIES
@@ -121,10 +120,9 @@ b {
   display: block;
   width: 8px;
   height: 8px;
-  margin-left: -4px;
-  margin-top: .5rem;
-  background-color: #fff;
-  border: 1px solid @blue-silk;
+  margin-left: -3px;
+  margin-top: .4rem;
+  background-color: @accent-medium;
   box-sizing: border-box;
   border-radius: 50%;
 }
@@ -148,6 +146,7 @@ b {
   position: relative;
   .color-light;
   .small;
+  color: @accent-medium;
 }
 .entry-title {
   .big;
@@ -156,11 +155,15 @@ b {
   font-family: @font-family;
 }
 .role {
-  color: @accent-medium;
+  .medium;
+  .color-dark;
+  .weight-bold;
   padding-bottom: .2em;
 }
 .description {
-  .medium;
+  .small;
+  .weight-light;
+  //.color-light;
   line-height: 1.5rem;
 }
 
@@ -177,7 +180,6 @@ ul.raw > li {
   padding: .3rem .7rem;
   border-radius: 1rem;
   border: 1px solid @blue-silk;
-  font-family: @font-family;
 
   &::before {
     content: '+ ';

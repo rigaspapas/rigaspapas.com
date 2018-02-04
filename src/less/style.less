@@ -1,8 +1,8 @@
 /*********************
   LESS FUNCTIONS
 *********************/
-@font-family: 'Exo', sans-serif;
-@font-family-header: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+@font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+@font-family-header: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 
 .transition(@time) {
   transition: ~'all @{time}s ease-out';
@@ -32,7 +32,7 @@
 .small  { font-size: .8rem; }
 .medium { font-size: .9rem; }
 .big    { font-size: 1.2rem; }
-.xbig   { font-size: 1.6rem; }
+.xbig   { font-size: 1.4rem; }
 
 .color-light  { color: #aaa; }
 .color-normal { color: #555; }
@@ -59,9 +59,17 @@ a {
   outline: none;
   color: inherit;
   text-decoration: none;
+
+  &.u {
+    text-decoration: underline;
+  }
 }
 
+html {
+  min-height: 100%; /* Chrome on Android bugfix */
+}
 body {
+  min-height: 100%; /* Chrome on Android bugfix */
   display: block;
   margin: 0;
   padding: 0;
@@ -226,6 +234,7 @@ h2 {
   border-radius: 50%;
   text-transform: uppercase;
   .big;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 }
 
 .icon:before {
