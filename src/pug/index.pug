@@ -3,17 +3,16 @@ html
   head
     title Rigas Papas
     meta(http-equiv='Content-type', content='text/html; charset=utf-8')
-    meta(name='description', content='Rigas Papathanasopoulos. Software engineer @ Arrikto.')
+    meta(name='description', content='Rigas Papathanasopoulos. Software engineer @ Transifex.')
     link(rel='shortcut icon', href='favicon.ico')
-    link(rel='stylesheet', type='text/css', href='css/style.min.css')
+    link(rel='stylesheet', type='text/css', href='style.css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='format-detection', content='telephone=no')
   body
     #content
       header
         h1 Rigas Papathanasopoulos
-        h2
-          | Software engineer
+        h2 Software engineer
       section.links
         a.btn.btn_1#resume_btn(href='#')
           | R&eacute;sum&eacute;
@@ -29,7 +28,7 @@ html
         +IconLink('500px', '500px', 'http://500px.com/rhgas')(IconClass='icon-500px')
         +IconLink('email', 'Email', 'mailto:rigaspapas@gmail.com')(IconClass='icon-mail')
       article#cv.hidden
-        include src/pug/cv.pug
+        include cv.pug
         a#cv_close.cv_close(href='#') &times;
     //- If IE lower than 10
     <!--[if lt IE 10]>
