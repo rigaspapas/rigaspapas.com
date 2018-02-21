@@ -32,6 +32,9 @@ let config = {
         use: extractHtml.extract({
           use: [{
             loader: 'html-loader',
+            options: {
+              interpolate: true,
+            }
           }, {
             loader: 'pug-html-loader',
             options: {
@@ -55,7 +58,7 @@ let config = {
         })
       },
       {
-        test: /\.(png|jpe?g|svg)$/i,
+        test: /\.(png|jpe?g|svg|ico)$/i,
         use: [
           'file-loader',
           {

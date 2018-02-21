@@ -4,7 +4,7 @@ html
     title Rigas Papas
     meta(http-equiv='Content-type', content='text/html; charset=utf-8')
     meta(name='description', content='Rigas Papathanasopoulos. Software engineer @ Transifex.')
-    link(rel='shortcut icon', href='favicon.ico')
+    link(rel='shortcut icon', href='${require(`../images/favicon.ico`)}')
     link(rel='stylesheet', type='text/css', href='style.css')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='format-detection', content='telephone=no')
@@ -32,7 +32,7 @@ html
       a#cv_close.cv_close(href='#') &times;
     //- If IE lower than 10
     <!--[if lt IE 10]>
-      img#background(alt='background-image', src='images/background.jpg')
+      img#background(alt='background-image', src='${require(`../images/background.jpg`)}')
     <![endif]-->
     script(async, type='text/javascript').
       window.onload = function(){
