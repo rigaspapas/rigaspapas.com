@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Rigas Papas
+    title Rigas Papathanasopoulos
     meta(http-equiv='Content-type', content='text/html; charset=utf-8')
     meta(name='description', content='Rigas Papathanasopoulos. Software engineer @ Transifex.')
     link(rel='shortcut icon', href='${require(`../images/favicon.ico`)}')
@@ -9,27 +9,23 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='format-detection', content='telephone=no')
   body
-    #content
-      header
-        h1 Rigas Papathanasopoulos
-        h2 Software engineer
-      section.links
-        a.btn.btn_1#resume_btn(href='#')
-          | R&eacute;sum&eacute;
-        a.btn.btn_2(href='/blog')
-          | My blog
-      footer
-        //- Function for printing links
-        mixin IconLink(name, text, link)
-          a(id=name, href=link)
-            i.link-icon.icon(class!=attributes.IconClass)
-            span= text
-        +IconLink('github', 'Github', 'https://github.com/rigaspapas/')(IconClass='icon-github')
-        +IconLink('500px', '500px', 'http://500px.com/rhgas')(IconClass='icon-500px')
-        +IconLink('email', 'Email', 'mailto:rigaspapas@gmail.com')(IconClass='icon-mail')
-      article#cv.hidden
-        include cv.pug
-      a#cv_close.cv_close(href='#') &times;
+    header
+      img.logo(alt='logo', src='../images/logo.png')
+      h1 Rigas Papathanasopoulos
+      h2 Software engineer
+      a.btn_blog(href='/blog')
+        | Read my blog
+    article
+      include cv.pug
+    footer
+      //- Function for printing links
+      mixin IconLink(name, text, link)
+        a(id=name, href=link)
+          i.link-icon.icon(class!=attributes.IconClass)
+          span= text
+      +IconLink('github', 'Github', 'https://github.com/rigaspapas/')(IconClass='icon-github')
+      +IconLink('500px', '500px', 'http://500px.com/rhgas')(IconClass='icon-500px')
+      +IconLink('email', 'Email', 'mailto:rigaspapas@gmail.com')(IconClass='icon-mail')
     //- If IE lower than 10
     <!--[if lt IE 10]>
       img#background(alt='background-image', src='${require(`../images/background.jpg`)}')
@@ -41,13 +37,6 @@ html
         googleFonts.setAttribute('type', 'text/css');
         googleFonts.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto:300,400,700|Exo:300,400,700');
         document.getElementsByTagName('head')[0].appendChild(googleFonts);
-
-        var btn = document.getElementById('resume_btn');
-        var btn_close = document.getElementById('cv_close');
-        var cv = document.getElementById('cv');
-        btn_close.onclick = btn.onclick = function() {
-          cv.className = cv.className == '' ? 'hidden' : '';
-        };
       }
     //- Google analytics
     script(async, type='text/javascript').
