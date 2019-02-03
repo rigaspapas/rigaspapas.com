@@ -1,8 +1,8 @@
 /*********************
   LESS FUNCTIONS
 *********************/
-@font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-@font-family-header: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+@font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+@font-family-special: 'Exo', @font-family;
 
 .transition(@time) {
   transition: ~'color @{time}s ease-out';
@@ -23,25 +23,26 @@
   box-sizing: border-box;
 }
 
-.xsmall { font-size: .7rem; }
-.small  { font-size: .8rem; }
+.small  { font-size: .75rem; }
 .medium { font-size: .9rem; }
 .big    { font-size: 1.2rem; }
 .xbig   { font-size: 1.4rem; }
 
 .color-light  { color: #aaa; }
-.color-dark   { color: #383740; }
+.color-dark   { color: #000; }
 
 .weight-light { font-weight: 300; }
 .weight-normal { font-weight: 400; }
 .weight-bold { font-weight: 700; }
-
+.uppercase { text-transform: uppercase; }
 .nospace {
   margin: 0;
   padding: 0;
 }
 
-
+.font-special {
+    font-family: @font-family-special;
+}
 ::selection {
   background-color: #000;
   color: #fff;
@@ -66,7 +67,7 @@ body {
   min-height: 100%; /* Chrome on Android bugfix */
   display: block;
   margin: 0;
-  padding: 2rem;
+  padding: 0;
 
   background: #1d2232 url('../images/background.jpg') center no-repeat;
   background-size: cover;
@@ -107,53 +108,44 @@ body:before {
 .logo {
   width: 4rem;
   height: 4rem;
+  margin-top: 1rem;
   border-radius: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
 }
-h1 {
-  margin: 2rem 0 1rem;
-  padding: 0;
-  line-height: 2.5rem;
-  font-size: 2.5rem;
-  font-weight: 400;
-}
-h2 {
+h1, h2 {
   margin: 1rem 0;
   padding: 0;
-  font-size: 1.2rem;
+}
+h1 {
+  line-height: 2.5rem;
+  font-size: 2rem;
+  .weight-normal;
+  .font-special;
+}
+h2 {
+  .big;
   .weight-light;
   line-height: 2rem;
   word-break: break-word;
-  position: relative;
-}
-
-.links {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  margin-top: -1rem;
 }
 
 .btn_blog {
   display: inline-block;
-  color: @purple-white;
-  .medium;
-  .weight-light;
+  .font-special;
+  .color-dark;
+  .small;
+  .weight-bold;
   outline: none;
   cursor: pointer;
-  padding: .5rem 1rem;
-  margin: 2rem 0 0 0;
+  padding: .5rem .7rem;
+  margin: 1rem 0 0 0;
   .transition(.3);
-  border: solid .1rem;
+  background-color: #f0f0f0;
   border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
 
-  &:hover { color: #fff; }
+  &:hover { color: @purple-dark; }
   &:active { color: @purple-light; }
-}
-
-.icon:before {
-  .transition(.3);
 }
 
 footer {
@@ -193,10 +185,17 @@ footer {
     margin-left: 6rem;
     margin-top: 0;
   }
+  .entry-image {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 @media screen and (max-width:600px){
   body {
     background-position: 0 0;
     background-size: auto 50vh;
+  }
+  .entry-image {
+    display: none;
   }
 }

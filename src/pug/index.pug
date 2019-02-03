@@ -14,18 +14,9 @@ html
       h1 Rigas Papathanasopoulos
       h2 Software engineer
       a.btn_blog(href='/blog')
-        | Read my blog
+        | 📰  &nbsp;Read my blog
     article
       include cv.pug
-    footer
-      //- Function for printing links
-      mixin IconLink(name, text, link)
-        a(id=name, href=link)
-          i.link-icon.icon(class!=attributes.IconClass)
-          span= text
-      +IconLink('github', 'Github', 'https://github.com/rigaspapas/')(IconClass='icon-github')
-      +IconLink('500px', '500px', 'http://500px.com/rhgas')(IconClass='icon-500px')
-      +IconLink('email', 'Email', 'mailto:rigaspapas@gmail.com')(IconClass='icon-mail')
     //- If IE lower than 10
     <!--[if lt IE 10]>
       img#background(alt='background-image', src='${require(`../images/background.jpg`)}')
@@ -35,7 +26,7 @@ html
         var googleFonts = document.createElement('link');
         googleFonts.setAttribute('rel', 'stylesheet');
         googleFonts.setAttribute('type', 'text/css');
-        googleFonts.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto:300,400,700|Exo:300,400,700');
+        googleFonts.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto:300,400,700|Exo:400,700');
         document.getElementsByTagName('head')[0].appendChild(googleFonts);
       }
     //- Google analytics
