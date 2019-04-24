@@ -2,19 +2,15 @@
   LESS FUNCTIONS
 *********************/
 @font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-@font-family-special: 'Exo', @font-family;
-
-.transition(@time) {
-  transition: ~'color @{time}s ease-out';
-}
+@font-family-special: 'Gudea', @font-family;
 
 /**
  * COLORS
  */
 @text: #fff;
-@purple-dark: #6836D8;
-@purple-light: #F656FD;
-@purple-white: #B4B2C5;
+@blue-dark: #4376BF;
+@blue-light: #599DFF;
+@blue-white: #B4B2C5;
 
 /**
  * CLASSES
@@ -28,17 +24,9 @@
 .big    { font-size: 1.2rem; }
 .xbig   { font-size: 1.4rem; }
 
-.color-light  { color: #aaa; }
-.color-dark   { color: #000; }
-
 .weight-light { font-weight: 300; }
 .weight-normal { font-weight: 400; }
 .weight-bold { font-weight: 700; }
-.uppercase { text-transform: uppercase; }
-.nospace {
-  margin: 0;
-  padding: 0;
-}
 
 .font-special {
     font-family: @font-family-special;
@@ -68,11 +56,9 @@ body {
   display: block;
   margin: 0;
   padding: 0;
-
   background: #1d2232 url('../images/background.jpg') center no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
   color: @text;
   font-family: @font-family;
   text-align: center;
@@ -87,7 +73,7 @@ body:before {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(38, 35, 43, 0.8);
+  background-color: rgba(37, 41, 47, 0.88);
 }
 /*********************
   FIXED BG IMAGE
@@ -106,46 +92,41 @@ body:before {
 }
 
 .logo {
-  width: 4rem;
-  height: 4rem;
-  margin-top: 1rem;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem .5rem .5rem;
 }
 h1, h2 {
   margin: 1rem 0;
   padding: 0;
+  .font-special;
+  line-height: 2rem;
 }
 h1 {
-  line-height: 2.5rem;
   font-size: 2rem;
   .weight-normal;
-  .font-special;
 }
 h2 {
-  .big;
+  .xbig;
   .weight-light;
-  line-height: 2rem;
   word-break: break-word;
+  color: @blue-dark;
+  letter-spacing: 3px;
 }
 
 .btn_blog {
   display: inline-block;
-  .font-special;
-  .color-dark;
   .small;
   .weight-bold;
   outline: none;
   cursor: pointer;
   padding: .5rem .7rem;
   margin: 1rem 0 0 0;
-  .transition(.3);
-  background-color: #f0f0f0;
+  background-color: @blue-dark;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
 
-  &:hover { color: @purple-dark; }
-  &:active { color: @purple-light; }
+  &:hover { background-color: @blue-light; }
 }
 
 footer {
@@ -167,22 +148,21 @@ footer {
     padding-left: 0;
     padding-right: 0;
     padding-top: 10vh;
+    background-position: 0 0;
+    background-size: auto 62vh;
   }
   header {
     text-align: left;
   }
   .logo {
-    float: left;
-    margin: .5rem 1rem;
+    display: none;
   }
-  h1 {
-    .xbig;
-  }
-  h2 {
-    .medium;
+  h1, h2 {
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
   .btn_blog {
-    margin-left: 6rem;
+    margin-left: 2rem;
     margin-top: 0;
   }
   .entry-image {
