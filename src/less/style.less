@@ -2,21 +2,35 @@
   LESS FUNCTIONS
 *********************/
 @font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-@font-family-special: 'Gudea', @font-family;
+@font-family-special: 'Libre Baskerville', serif;
 
 /**
  * COLORS
  */
-@text: #fff;
 @blue-dark: #4376BF;
 @blue-light: #599DFF;
-@blue-white: #B4B2C5;
 
 /**
  * CLASSES
  */
 .border-box {
   box-sizing: border-box;
+}
+.white-box-wrapper {
+  background: #fff;
+  border-radius: .2rem;
+  margin-bottom: 1.5rem;
+  padding: 2rem 3rem;
+}
+.white-box-item {
+  margin: 1.5rem 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed #ccc;
+
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
 }
 
 .small  { font-size: .75rem; }
@@ -28,9 +42,13 @@
 .weight-normal { font-weight: 400; }
 .weight-bold { font-weight: 700; }
 
+.center { text-align: center; }
+
 .font-special {
     font-family: @font-family-special;
 }
+.font-monospace { font-family: monospace; }
+
 ::selection {
   background-color: #000;
   color: #fff;
@@ -48,66 +66,30 @@ a {
   }
 }
 
-html {
-  min-height: 100%; /* Chrome on Android bugfix */
-}
 body {
-  min-height: 100%; /* Chrome on Android bugfix */
   display: block;
   margin: 0;
   padding: 0;
-  background: #1d2232 url('../images/background.jpg') center no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  color: @text;
+  background-color: #ccc;
+  color: #000;
   font-family: @font-family;
   text-align: center;
-
-  z-index: -1;
-}
-body:before {
-  content: '';
-  z-index: -1;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(37, 41, 47, 0.88);
-}
-/*********************
-  FIXED BG IMAGE
-  FOR OLD IEs
-*********************/
-#background {
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
 }
 
-.logo {
-  width: 3rem;
-  height: 3rem;
-  margin: 1rem .5rem .5rem;
-}
 h1, h2 {
-  margin: 1rem 0;
+  margin: 4vh 0;
   padding: 0;
-  .font-special;
-  line-height: 2rem;
 }
 h1 {
-  font-size: 2rem;
+  .font-special;
+  line-height: 3.5rem;
+  font-size: 2.5rem;
   .weight-normal;
+  margin-top: 8vh;
 }
 h2 {
   .xbig;
+  line-height: 2rem;
   .weight-light;
   word-break: break-word;
   color: @blue-dark;
@@ -116,15 +98,15 @@ h2 {
 
 .btn_blog {
   display: inline-block;
+  color: #fff;
   .small;
   .weight-bold;
   outline: none;
   cursor: pointer;
   padding: .5rem .7rem;
-  margin: 1rem 0 0 0;
+  margin: 4vh 0 0 0;
   background-color: @blue-dark;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
 
   &:hover { background-color: @blue-light; }
 }
@@ -140,41 +122,131 @@ footer {
   }
 }
 
-@import "cv.less";
+article {
+  box-sizing: border-box;
+  margin: 2rem auto;
+
+  line-height: 1.4em;
+  text-align: left;
+
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+
+  * {
+    word-break: break-word;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover { color: @blue-light; }
+  }
+
+  section{
+    margin: 0 auto 1.5rem;
+  }
+
+  h1 {
+    .big;
+    font-family: @font-family;
+    line-height: 1em;
+    margin: 5rem 0 2rem;
+    position: relative;
+    .weight-bold;
+    .center;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  padding: 0 0 1rem 0;
+  line-height: 1.5em;
+}
+
+
+// HEADER ICONS
+.h-border {
+  position: absolute;
+  left: 50%;
+  margin-left: -4rem;
+  top: -1rem;
+  width: 8rem;
+  height: .2rem;
+  background-color: #000;
+  border-radius: .2rem;
+}
+
+// WORK & EDUCATION ENTRIES
+.entry {
+  line-height: 1.6rem;
+}
+
+.entry-image {
+  float: right;
+  margin-top: 1rem;
+  width: 4rem;
+  height: 4rem;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.year {
+  .small;
+  color: @blue-dark;
+  text-transform: uppercase;
+  .weight-bold;
+}
+.entry-title {
+  .weight-bold;
+  .font-special;
+  .big;
+  margin: .5rem 0 1rem 0;
+}
+.description {
+  .medium;
+  line-height: 1.1rem;
+  .font-monospace;
+}
+
+
+// OPEN-SOURCE
+.list-description {
+  .medium;
+  line-height: 1.1rem;
+  .font-monospace;
+}
+
+// LINKS
+.icon {
+  display: block;
+  .xbig;
+}
+
 @import "icons.less";
 
 @media screen and (max-width:720px){
-  body {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 10vh;
-    background-position: 0 0;
-    background-size: auto 62vh;
-  }
-  header {
-    text-align: left;
-  }
-  .logo {
-    display: none;
+  header h1 {
+    font-size: 1.8rem;
   }
   h1, h2 {
     margin-left: 2rem;
     margin-right: 2rem;
-  }
-  .btn_blog {
-    margin-left: 2rem;
-    margin-top: 0;
   }
   .entry-image {
     width: 3rem;
     height: 3rem;
   }
 }
+
 @media screen and (max-width:600px){
-  body {
-    background-position: 0 0;
-    background-size: auto 50vh;
-  }
   .entry-image {
     display: none;
   }

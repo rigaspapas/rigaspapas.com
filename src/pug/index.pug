@@ -10,22 +10,19 @@ html
     meta(name='format-detection', content='telephone=no')
   body
     header
-      img.logo(alt='logo', src='../images/logo.png')
-      h1 Rigas Papathanasopoulos
+      h1
+        | Rigas<br>
+        | Papathanasopoulos
       h2 Software engineer
       a.btn_blog(href='/blog')
         | 📰  &nbsp;Read my blog
     article
       include cv.pug
-    //- If IE lower than 10
-    <!--[if lt IE 10]>
-      img#background(alt='background-image', src='${require(`../images/background.jpg`)}')
-    <![endif]-->
     script(async, type='text/javascript').
       window.onload = function(){
         var googleFonts = document.createElement('link');
         googleFonts.setAttribute('rel', 'stylesheet');
         googleFonts.setAttribute('type', 'text/css');
-        googleFonts.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto:300,400,700|Gudea:400,700');
+        googleFonts.setAttribute('href', 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Roboto:300,400,700&display=swap');
         document.getElementsByTagName('head')[0].appendChild(googleFonts);
       }
