@@ -53,6 +53,9 @@
   background-color: #000;
   color: #fff;
 }
+* {
+  word-break: break-word;
+}
 img {
   border: none;
 }
@@ -74,27 +77,14 @@ body {
   color: #000;
   font-family: @font-family;
   text-align: center;
+
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
 }
 
-h1, h2 {
-  margin: 4vh 0;
-  padding: 0;
-}
-h1 {
-  .font-special;
-  line-height: 3.5rem;
-  font-size: 2.5rem;
-  .weight-normal;
-  margin-top: 8vh;
-}
-h2 {
-  .xbig;
-  line-height: 2rem;
-  .weight-light;
-  word-break: break-word;
-  color: @blue-dark;
-  letter-spacing: 3px;
-}
 
 .btn_blog {
   display: inline-block;
@@ -122,20 +112,45 @@ footer {
   }
 }
 
-article {
-  box-sizing: border-box;
-  margin: 2rem auto;
+// Half - half design
+header {
+  position: sticky;
+  top: 0;
+  padding-top: 10vh;
 
+  h1, h2 {
+    padding: 4vh 0;
+    margin: 0;
+  }
+  h1 {
+    .font-special;
+    line-height: 3.5rem;
+    font-size: 2.5rem;
+    .weight-normal;
+  }
+  h2 {
+    .xbig;
+    line-height: 2rem;
+    .weight-light;
+    word-break: break-word;
+    color: @blue-dark;
+    letter-spacing: 3px;
+  }
+}
+
+article, header {
+  float: left;
+  width: 50%;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  box-sizing: border-box;
+}
+
+article {
+  margin: 0 auto;
   line-height: 1.4em;
   text-align: left;
-
-  position: relative;
-  width: 100%;
   max-width: 720px;
-
-  * {
-    word-break: break-word;
-  }
 
   a {
     text-decoration: none;
@@ -170,7 +185,7 @@ li {
 }
 
 
-// HEADER ICONS
+// HEADER BORDERS
 .h-border {
   position: absolute;
   left: 50%;
@@ -236,9 +251,12 @@ li {
   header h1 {
     font-size: 1.8rem;
   }
-  h1, h2 {
-    margin-left: 2rem;
-    margin-right: 2rem;
+  header {
+    position: initial;
+  }
+  header, article {
+    float: none;
+    width: 100%;
   }
   .entry-image {
     width: 3rem;
